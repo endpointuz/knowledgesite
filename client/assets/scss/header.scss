@@ -1,0 +1,31 @@
+.header {
+  background-color: #FAFCFF;
+  &-top {
+    border-bottom: 1px solid #F5F7FB;
+  }
+  &-navbar {
+    max-width: 1680px;
+    margin: 0 auto;
+    &-nav {
+      height: 100%;
+    }
+  }
+  &-phone {
+    &-label {
+      font-size: 16px;
+      color: #58617C;
+      margin-right: 11px;
+    }
+    &-number a {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1E266D;
+    }
+  }
+  &-main {
+    height: 440px;
+    &-slogan {
+      padding: 0 20px;
+    }
+  }
+}

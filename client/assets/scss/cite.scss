@@ -1,0 +1,18 @@
+.cite {
+  padding-bottom: 80px;
+  &-wrapper {
+    background-color: #323871;
+    padding: 60px 0 70px 30px;
+    &-text {
+      width: 65%;
+    }
+  }
+  &-text {
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 30px;
+    padding-left: 41px;
+  }
+}

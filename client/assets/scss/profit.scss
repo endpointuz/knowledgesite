@@ -1,0 +1,10 @@
+.profit {
+  padding-bottom: 138px;
+  &-text {
+    font-size: 16px;
+    color: #51556E;
+  }
+  &-description:not(:last-child) {
+    margin-bottom: 17px;
+  }
+}

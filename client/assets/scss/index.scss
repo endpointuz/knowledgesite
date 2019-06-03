@@ -1,0 +1,52 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500,600,700,700i,900&display=swap');
+@import "partials/links";
+@import "partials/titles";
+@import "partials/menulist";
+@import "partials/buttons";
+@import "header";
+@import "courseCard";
+@import "course";
+@import "profit";
+@import "technologies";
+@import "cite";
+@import "appointment";
+@import "footer";
+
+html, body {
+  font-size: 16px;
+}
+
+html, body, p, div, h1, h2, h3, h4, h5, h6, ul, ol, li {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  &:hover {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+a.more {
+  font-size: 18px;
+  color: rgba(255, 177, 91, 1);
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+    color: rgba(255, 177, 91, 1);
+  }
+}
+.esubtitle {
+  color: #51556E;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 24px;
+}

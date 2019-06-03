@@ -1,0 +1,10 @@
+.technologies {
+  padding-bottom: 100px;
+  .my-col {
+    flex: 0 0 (100%/8);
+  }
+  .h-my {
+    height: 51px;
+    background-color: transparent;
+  }
+}
