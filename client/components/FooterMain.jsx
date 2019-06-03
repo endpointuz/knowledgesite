@@ -69,10 +69,10 @@ const FooterMain = () => (
       </Col>
     </Row>
     <Row noGutters={true} className="justify-content-between">
-      <Col xl={4}>
+      <Col sm={6} xl={4}>
         <p className="footer-credits">© 2019 OOO «Endpoint»</p>
       </Col>
-      <Col xl={4}>
+      <Col sm={6} xl={4}>
         <p className="footer-label">
           <span className='footer-label-title'>Создан командой</span>
           <a href="/">

@@ -34,7 +34,6 @@ const HeaderMenu = () => {
           </Col>
           <Col xs={3} xl={6}>
             <button type="button" className="header-navbar-toggler" onClick={handleToggle}>
-              {/*{visibleMenu ? <FontAwesomeIcon icon="times" /> : <FontAwesomeIcon icon="bars" />}*/}
               <Bars visible={visibleMenu} />
             </button>
             <nav className={`header-navbar-nav ${visibleMenu ? 'visible' : null}`}>

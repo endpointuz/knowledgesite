@@ -44,6 +44,16 @@
         color: #FFB15B;
       }
     }
+    @media (min-width: 0) and (max-width: 576px) {
+      -webkit-border-radius: 12%/50%;
+      -moz-border-radius: 12%/50%;
+      border-radius: 12%/50%;
+    }
+    @media (min-width: 577px) and (max-width: 768px) {
+      -webkit-border-radius: 12%/50%;
+      -moz-border-radius: 12%/50%;
+      border-radius: 12%/50%;
+    }
   }
   &-social {
     font-size: 20px;
