@@ -73,16 +73,20 @@ const TechnologiesMain = () => (
         </HeaderTitle>
       </Col>
     </Row>
-    <Row className="align-items-center" noGutters={true}>
+    <Row className="align-items-center justify-content-around" noGutters={true}>
       {techIcons.map((el, i) => {
         return (i > 1 && i % 8 === 0)
           ? (
             <Separator key={i}>
-              {<div className="my-col"><img src={el} alt="" /></div>}
+              {
+                <div className="my-col">
+                  <img src={el} alt="logo" className="technologies-img"/>
+                </div>
+              }
             </Separator>
           )
           : (
-            <div className="my-col" key={i}><img src={el} alt="" /></div>
+            <div className="my-col" key={i}><img src={el} alt="" className="technologies-img" /></div>
           );
       })}
     </Row>

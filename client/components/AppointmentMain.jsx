@@ -5,9 +5,9 @@ import { HeaderTitle, Button } from './ep-components';
 
 const AppointmentMain = () => (
   <div className="appointment-main">
-    <Container className="h-100">
-      <Row className="align-items-center justify-content-center h-100">
-        <Col xl={9}>
+    <Container className="h-100" className="p-0">
+      <Row className="align-items-center justify-content-center h-100" noGutters={true}>
+        <Col xl={8}>
           <div className="header-main-slogan">
             <HeaderTitle
               center={true}

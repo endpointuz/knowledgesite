@@ -5,10 +5,10 @@ import smallLogo from '../assets/img/small_logo.png';
 import smallFooterLogo from '../assets/img/small-footer-logo.png';
 
 const CompanyDetails = () => (
-  <div className="footer-details">
+  <div className="footer-details text-center">
     <a href="/"><img src={smallLogo} alt=""/></a>
-    <p className="footer-addr">г. Ташкент, Мирзо-Улугбекскийр-н, ул. Аккурган 1 пр-д, д. 60</p>
-    <p className="footer-email"><a href="mailto:knowledge@endpoint.uz" className="footer-email-link">knowledge@endpoint.uz</a></p>
+    <p className="footer-addr text-left">г. Ташкент, Мирзо-Улугбекскийр-н, ул. Аккурган 1 пр-д, д. 60</p>
+    <p className="footer-email text-left"><a href="mailto:knowledge@endpoint.uz" className="footer-email-link">knowledge@endpoint.uz</a></p>
   </div>
 );
 

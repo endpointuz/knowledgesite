@@ -1,6 +1,15 @@
 .footer {
   background-color: #F6F7FB;
   padding: 80px 0 19px 0;
+  @media (min-width: 0) and (max-width: 576px) {
+    padding-top: 40px;
+  }
+  &-details {
+    @media (min-width: 0) and (max-width: 576px) {
+      margin-bottom: 25px;
+      padding: 0 15px;
+    }
+  }
   &-addr {
     font-size: 14px;
     color: #51556E;
@@ -21,6 +30,9 @@
       color: rgba(81, 85, 110, 1);
       display: block;
     }
+    @media (min-width: 0) and (max-width: 576px) {
+      padding: 0 15px;
+    }
   }
   &-number {
     margin-bottom: 40px;
@@ -30,6 +42,9 @@
       font-size: 24px;
       line-height: 24px;
       display: block;
+    }
+    @media (min-width: 0) and (max-width: 576px) {
+      margin-bottom: 15px;
     }
   }
   &-menu {
@@ -49,11 +64,18 @@
     &-item {
       margin-bottom: 15px;
     }
+    @media (min-width: 0) and (max-width: 576px) {
+      margin-top: 20px;
+      padding: 0 15px;
+    }
   }
   &-credits {
     font-size: 14px;
     color: rgba(81, 85, 110, 1);
     padding-top: 15px;
+    @media (min-width: 0) and (max-width: 576px) {
+      padding-left: 15px;
+    }
   }
   &-label {
     padding-top: 15px;
@@ -62,6 +84,10 @@
       font-size: 14px;
       color: rgba(81, 85, 110, 1);
       margin-right: 12px;
+    }
+    @media (min-width: 0) and (max-width: 576px) {
+      text-align: left;
+      padding-left: 15px;
     }
   }
   .bb {

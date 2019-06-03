@@ -18,7 +18,7 @@ const CourseMain = () => (
       </Col>
     </Row>
     <Row noGutters={true}>
-      <Col xl={12} style={{ paddingBottom: 30 }} className="p-3 p-xl-0">
+      <Col xl={12} style={{ marginBottom: 30 }} className="p-3 p-xl-0">
         <CourseCard
           img={girlPic}
           title="Введение в программирование"

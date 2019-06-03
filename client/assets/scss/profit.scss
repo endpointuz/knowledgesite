@@ -4,7 +4,13 @@
     font-size: 16px;
     color: #51556E;
   }
+  &-description {
+    padding: 0 15px;
+  }
   &-description:not(:last-child) {
     margin-bottom: 17px;
+  }
+  &-image {
+    width: 100%;
   }
 }

@@ -11,7 +11,9 @@
     font-size: 33px;
     font-weight: 700;
     color: #FFFFFF;
-
+    @media (min-width: 0) and (max-width: 576px) {
+      font-size: 25px;
+    }
   }
   &-4 {
     font-size: 18px;

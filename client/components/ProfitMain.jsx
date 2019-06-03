@@ -8,7 +8,7 @@ const ProfitMain = () => (
   <Container className="p-0">
     <Row noGutters={true} className="align-items-center">
       <Col xl={6}>
-        <img src={profitPic} alt="" />
+        <img src={profitPic} alt="" className="profit-image" />
       </Col>
       <Col xl={5}>
         <HeaderTitle titleType="h2" style={{ marginBottom: 40 }}>

@@ -5,6 +5,9 @@
     padding: 60px 0 70px 30px;
     &-text {
       width: 65%;
+      @media (min-width: 0) and (max-width: 576px) {
+        width: 100%;
+      }
     }
   }
   &-text {
@@ -14,5 +17,9 @@
     font-style: italic;
     margin-top: 30px;
     padding-left: 41px;
+    @media (min-width: 0) and (max-width: 576px) {
+      font-size: 16px;
+      padding-right: 15px;
+    }
   }
 }

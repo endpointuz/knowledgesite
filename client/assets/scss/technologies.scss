@@ -2,9 +2,29 @@
   padding-bottom: 100px;
   .my-col {
     flex: 0 0 (100%/8);
+    @media (min-width: 0) and (max-width: 576px) {
+      flex: 0 0 (100%/4-5);
+      -ms-flex: 0 0 (100%/4-5);
+      -webkit-box-flex: 0 0 (100%/4-5);
+      -webkit-flex: 0 0 (100%/4-5);
+      flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+      text-align: center;
+      margin-bottom: 20px;
+      margin-right: 5px;
+      margin-left: 5px;
+    }
   }
   .h-my {
     height: 51px;
     background-color: transparent;
+    @media (min-width: 0) and (max-width: 576px) {
+      height: 0;
+      display: none;
+    }
+  }
+  &-img {
+    max-width: 100%;
   }
 }
