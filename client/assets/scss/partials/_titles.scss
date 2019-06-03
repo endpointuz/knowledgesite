@@ -3,15 +3,26 @@
     font-size: 44px;
     font-weight: 800;
     color: #1E266D;
+    @media (min-width: 0) and (max-width: 576px) {
+      font-size: 34px;
+    }
   }
   &-3 {
     font-size: 33px;
     font-weight: 700;
     color: #FFFFFF;
+
   }
   &-4 {
     font-size: 18px;
     font-weight: 900;
     color: #51556E;
+  }
+}
+
+h2.etitle-1 {
+  @media (min-width: 0) and (max-width: 576px) {
+    font-size: 29px;
+    padding: 0 15px;
   }
 }

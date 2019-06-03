@@ -67,4 +67,8 @@
       color: #fff;
     }
   }
+  @media (min-width: 0) and (max-width: 576px) {
+    font-size: 16px;
+    padding: 19px 45px;
+  }
 }

@@ -18,7 +18,7 @@ const CourseMain = () => (
       </Col>
     </Row>
     <Row noGutters={true}>
-      <Col xl={12} style={{ paddingBottom: 30 }}>
+      <Col xl={12} style={{ paddingBottom: 30 }} className="p-3 p-xl-0">
         <CourseCard
           img={girlPic}
           title="Введение в программирование"
@@ -28,7 +28,7 @@ const CourseMain = () => (
           startAt="Июнь"
         />
       </Col>
-      <Col xl={12}>
+      <Col xl={12} className="p-3 p-xl-0">
         <CourseCard
           img={manPic}
           title="Frontend. ReactJS"

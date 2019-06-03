@@ -71,6 +71,11 @@
   }
   &-main {
     height: 440px;
+    @media (min-width: 0) and (max-width: 576px) {
+      height: auto;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
     &-slogan {
       padding: 0 20px;
     }

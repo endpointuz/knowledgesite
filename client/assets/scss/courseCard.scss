@@ -6,13 +6,23 @@
     position: absolute;
     right: 40px;
     top: 20px;
+    @media (min-width: 0) and (max-width: 576px) {
+      right: 20px;
+    }
   }
   .mx-10px {
     margin-right: 10px;
     margin-left: 30px;
+    @media (min-width: 0) and (max-width: 576px) {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
   }
   .mr-10px {
     margin-right: 10px;
+    @media (min-width: 0) and (max-width: 576px) {
+      margin-bottom: 10px;
+    }
   }
   .border-left {
     border-left: 1px solid rgba(81, 85, 110, 1);
@@ -25,6 +35,10 @@
     font-weight: 700;
     color: rgba(63, 67, 95, 1);
     margin-bottom: 10px;
+    @media (min-width: 0) and (max-width: 576px) {
+      padding-top: 10px;
+      font-size: 22px;
+    }
   }
   &-description {
     font-size: 14px;
@@ -38,12 +52,18 @@
       font-weight: 700;
       line-height: 23px;
       color: rgba(63, 67, 95, 1);
+      @media (min-width: 0) and (max-width: 576px) {
+        font-size: 20px;
+      }
     }
     .title {
       font-size: 16px;
       font-weight: 300;
       line-height: 16px;
       color: rgba(81, 85, 110, .6);
+      @media (min-width: 0) and (max-width: 576px) {
+        font-size: 14px;
+      }
     }
   }
 }

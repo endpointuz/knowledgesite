@@ -10,10 +10,10 @@ const HeaderMain = () => (
         <Col xl={8}>
           <div className="header-main-slogan">
             <HeaderTitle center={true}>
-              Развивай свои навыки Начни карьеру в IT
+              Развивай свои навыки. Начни карьеру в IT
             </HeaderTitle>
             <p className="esubtitle">
-              Изучай программирование и другие востребованные направления
+              Изучай программирование и другие востребованные направления.
               Лучшие теории и практики построенные на авторских методиках от ведущих специалистов
             </p>
             <div style={{ textAlign: 'center', marginTop: 20 }}>
