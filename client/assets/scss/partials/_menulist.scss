@@ -1,22 +1,33 @@
 .menu-list {
   list-style-type: none;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  height: 100%;
+  text-align: center;
+  @media (min-width: 1200px) {
+    text-align: left;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    height: 100%;
+  }
   &-item {
-    position: relative;
-    padding: 38px 0 32px 0;
+    padding: 10px 0;
+    margin: 0;
+    @media (min-width: 1200px) {
+      position: relative;
+      padding: 38px 0 32px 0;
+      margin-right: 51px;
+    }
      .elink-menu {
-        &:hover:after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 4px;
-          background-color: black;
-        }
+       @media (min-width: 1200px) {
+         &:hover:after {
+           content: "";
+           position: absolute;
+           bottom: 0;
+           left: 0;
+           width: 100%;
+           height: 4px;
+           background-color: black;
+         }
+       }
      }
   }
 }
