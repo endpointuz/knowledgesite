@@ -28,6 +28,9 @@
       margin-right: 5px;
       margin-left: 5px;
     }
+    @media (min-width: 769px) and (max-width: 991px) {
+      text-align: center;
+    }
   }
   .h-my {
     height: 51px;

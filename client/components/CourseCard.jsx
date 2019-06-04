@@ -22,17 +22,17 @@ const CourseCard = ({
     </a>
     <Container className="p-0">
       <Row className="align-items-center flex-nowrap" noGutters={true}>
-        <Col xs={0} xl="auto" className="text-center d-none d-md-block" style={{ width: '23%' }}>
-          <img src={img} />
+        <Col xs={0} lg="auto" xl="auto" className="text-center d-none d-lg-block" style={{ width: '23%' }}>
+          <img src={img} className="course-card-image" />
         </Col>
-        <Col xs={12} xl="auto" className="border-left" style={{ width: '77%' }}>
+        <Col xs={12} lg="auto" xl="auto" className="border-left" style={{ width: '77%' }}>
           <div className="course-card-info">
             <h3 className="course-card-title">{title}</h3>
             <p className="course-card-description">{description}</p>
             <div className="course-card-stat">
               <Container className="p-0">
                 <Row noGutters={true}>
-                  <Col xl="auto">
+                  <Col md={4} xl="auto">
                     <div className="course-card-stat-duration">
                       <Container className="p-0">
                         <Row noGutters={true}>
@@ -47,7 +47,7 @@ const CourseCard = ({
                       </Container>
                     </div>
                   </Col>
-                  <Col xl="auto">
+                  <Col md={5} xl="auto">
                     <div className="course-card-stat-period">
                       <Container className="p-0">
                         <Row noGutters={true}>
@@ -62,7 +62,7 @@ const CourseCard = ({
                       </Container>
                     </div>
                   </Col>
-                  <Col xl="auto">
+                  <Col md={3} xl="auto">
                     <div className="course-card-stat-start">
                       <Container className="p-0">
                         <Row noGutters={true}>
@@ -77,7 +77,7 @@ const CourseCard = ({
                       </Container>
                     </div>
                   </Col>
-                  <Col xl="auto" className="align-self-end ml-auto">
+                  <Col md={12} xl="auto" className="align-self-end ml-auto p-md-2 p-xl-0">
                     <div className="course-card-stat-more">
                       <Container className="p-0">
                         <Row noGutters={true}>

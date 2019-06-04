@@ -1,21 +1,29 @@
 .course-card {
   box-shadow: 0px 10px 25px 0px rgba(29, 17, 3, 0.12);
   position: relative;
+  &-image {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      width: 100%;
+    }
+  }
   .share-button {
     display: block;
     position: absolute;
     right: 40px;
-    top: 20px;
+    top: 40px;
     @media (min-width: 0) and (max-width: 576px) {
       right: 20px;
     }
     @media (min-width: 577px) and (max-width: 768px) {
+      right: 20px;
+    }
+    @media (min-width: 769px) and (max-width: 991px) {
       right: 20px;
     }
   }
   .mx-10px {
     margin-right: 10px;
-    margin-left: 30px;
+    margin-left: 29px;
     @media (min-width: 0) and (max-width: 576px) {
       margin-left: 0;
       margin-bottom: 10px;
@@ -23,6 +31,14 @@
     @media (min-width: 577px) and (max-width: 768px) {
       margin-left: 0;
       margin-bottom: 10px;
+    }
+    @media (min-width: 769px) and (max-width: 991px) {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      margin-left: 0;
+      text-align: right;
     }
   }
   .mr-10px {
@@ -33,12 +49,15 @@
     @media (min-width: 577px) and (max-width: 768px) {
       margin-bottom: 10px;
     }
+    @media (min-width: 769px) and (max-width: 991px) {
+      margin-bottom: 10px;
+    }
   }
   .border-left {
     border-left: 1px solid rgba(81, 85, 110, 1);
   }
   &-info {
-    padding: 20px 30px 45px 20px;
+    padding: 40px 30px 40px 20px;
   }
   &-title {
     font-size: 28px;
@@ -53,14 +72,23 @@
       padding-top: 10px;
       font-size: 22px;
     }
+    @media (min-width: 769px) and (max-width: 991px) {
+      padding-top: 10px;
+      font-size: 22px;
+    }
   }
   &-description {
     font-size: 14px;
     left: 18px;
     color: rgba(81, 85, 110, 1);
-    margin-bottom: 19px;
+    margin-bottom: 30px;
   }
   &-stat {
+    &-more {
+      @media (min-width: 992px) and (max-width: 1199px) {
+        padding-top: 15px;
+      }
+    }
     .data {
       font-size: 24px;
       font-weight: 700;
@@ -72,16 +100,28 @@
       @media (min-width: 577px) and (max-width: 768px) {
         font-size: 20px;
       }
+      @media (min-width: 769px) and (max-width: 991px) {
+        font-size: 20px;
+      }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 20px;
+      }
     }
     .title {
       font-size: 16px;
       font-weight: 300;
-      line-height: 16px;
+      line-height: 24px;
       color: rgba(81, 85, 110, .6);
       @media (min-width: 0) and (max-width: 576px) {
         font-size: 14px;
       }
       @media (min-width: 577px) and (max-width: 768px) {
+        font-size: 14px;
+      }
+      @media (min-width: 769px) and (max-width: 991px) {
+        font-size: 14px;
+      }
+      @media (min-width: 992px) and (max-width: 1199px) {
         font-size: 14px;
       }
     }

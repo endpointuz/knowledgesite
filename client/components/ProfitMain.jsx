@@ -6,11 +6,11 @@ import HeaderTitle from './ep-components/HeaderTitle';
 
 const ProfitMain = () => (
   <Container className="p-0">
-    <Row noGutters={true} className="align-items-center">
-      <Col xl={6}>
+    <Row noGutters={true} className="align-items-center justify-content-lg-between">
+      <Col lg={5} xl={6}>
         <img src={profitPic} alt="" className="profit-image" />
       </Col>
-      <Col xl={5}>
+      <Col lg={6} xl={5}>
         <HeaderTitle titleType="h2" style={{ marginBottom: 40 }}>
           Что ты получишь
         </HeaderTitle>

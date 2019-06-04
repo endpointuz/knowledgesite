@@ -7,7 +7,7 @@ const AppointmentMain = () => (
   <div className="appointment-main">
     <Container className="h-100" className="p-0">
       <Row className="align-items-center justify-content-center h-100" noGutters={true}>
-        <Col xl={8}>
+        <Col lg={8} xl={8}>
           <div className="header-main-slogan">
             <HeaderTitle
               center={true}
@@ -16,7 +16,7 @@ const AppointmentMain = () => (
               Пора начинать инвестировать в себя
             </HeaderTitle>
             <p className="esubtitle">
-              Записывайся на консультацию и узнаешь,<br />
+              <span className="d-block">Записывайся на консультацию и узнаешь,</span>
               как с нуля освоить профессию и какие языки
               программирования изучить.
             </p>

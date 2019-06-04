@@ -3,6 +3,21 @@ import { handleActions } from 'redux-actions';
 
 import * as actions from '../actions';
 
+const windowData = handleActions({
+  [actions.setOffsetY](state, { payload: { data } }) {
+    return { ...state, offsetY: data };
+  },
+  [actions.setVisibilityMenu](state, { payload: { data } }) {
+    return {
+      ...state,
+      visibilityMenu: data,
+    };
+  },
+}, {
+  offsetY: null,
+  visibilityMenu: true,
+});
+
 /**
  * Log In reducers
  */
@@ -40,4 +55,5 @@ const logInData = handleActions({
 
 export default combineReducers({
   logInData,
+  windowData,
 });

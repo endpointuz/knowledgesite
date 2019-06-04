@@ -4,6 +4,11 @@ import { message } from 'antd';
 
 import routes from '../apiRoutes';
 
+export const setOffsetY = createAction('OFFSET_Y_SET');
+export const setVisibilityMenu = createAction('VISIBILITY_MENU_SET');
+
+
+
 /**
  * [Log in actions]
  */

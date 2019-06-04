@@ -4,13 +4,8 @@ import NotFound from '../client/view/NotFound.jsx';
 
 
 const routes = [
-  // {
-  //   ...Homepage,
-  //   path: '/',
-  //   exact: true,
-  // },
   {
-    component: Homepage,
+    ...Homepage,
     path: '/',
     exact: true,
   },

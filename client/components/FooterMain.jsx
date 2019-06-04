@@ -5,7 +5,7 @@ import smallLogo from '../assets/img/small_logo.png';
 import smallFooterLogo from '../assets/img/small-footer-logo.png';
 
 const CompanyDetails = () => (
-  <div className="footer-details text-center">
+  <div className="footer-details text-center text-md-left">
     <a href="/"><img src={smallLogo} alt=""/></a>
     <p className="footer-addr text-left">г. Ташкент, Мирзо-Улугбекскийр-н, ул. Аккурган 1 пр-д, д. 60</p>
     <p className="footer-email text-left"><a href="mailto:knowledge@endpoint.uz" className="footer-email-link">knowledge@endpoint.uz</a></p>
@@ -58,13 +58,13 @@ const CompanyMenu = () => (
 const FooterMain = () => (
   <Container className="px-0 pt-0">
     <Row noGutters={true} className="justify-content-between bb">
-      <Col xl={3}>
+      <Col md={6} xl={3}>
         <CompanyDetails />
       </Col>
-      <Col xl={3}>
+      <Col md={6} xl={3}>
         <CompanySocials />
       </Col>
-      <Col xl={4}>
+      <Col xl={4} className="d-none d-xl-block">
         <CompanyMenu />
       </Col>
     </Row>
