@@ -8,3 +8,10 @@ jobs:
       - checkout
       - add_ssh_keys
 
+      - run:
+          name: Install dependencies
+          command: sudo pip install -r deploy/requirements.txt
+
+      - run:
+          name: Deploy
+          command: sudo python deploy/deploy.py

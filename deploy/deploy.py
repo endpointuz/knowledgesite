@@ -6,7 +6,7 @@ ssh.set_missing_host_key_policy(AutoAddPolicy())
 ssh.connect('94.158.52.41', port=37224, username='selinakyle', password='6rGYJp45G@!H854KLDV73AB44T#9*3F2')
 
 commands = [
-    'cd ~/mvd/tablet_frontend/',
+    'cd ~/knowledge.uz/knowledge-ep-site/',
     'git pull --rebase origin master',
     'docker-compose restart'
 ]
