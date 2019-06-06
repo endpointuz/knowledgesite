@@ -6,7 +6,7 @@ services:
       dockerfile: deploy/Dockerfile
     restart: always
     ports:
-      - "9999:80"
+      - "9999:3000"
     networks:
       - knowledge.uz
 
