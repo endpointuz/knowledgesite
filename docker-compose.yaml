@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: deploy/Dockerfile
+    volumes:
+      - .:/knowlege.uz
     restart: always
     ports:
       - "9999:3000"

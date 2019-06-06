@@ -1,3 +1,2 @@
 FROM node:10.14.2
-COPY . .
-CMD ["node", "build/server.js"]
+CMD ["node", "/knowledge.uz/build/server.js"]
