@@ -33,6 +33,7 @@ class Homepage extends React.Component {
     return (
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
         <HeaderContainer />
+        <h1>Test</h1>
         <div className="course">
           <CourseMain />
         </div>
