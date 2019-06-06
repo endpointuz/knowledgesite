@@ -1,0 +1,47 @@
+.teacher {
+  padding-top: 80px;
+  &-header {
+    margin-bottom: 69px;
+    @media (min-width: 0) and (max-width: 576px) {
+      margin-bottom: 30px;
+    }
+    @media (min-width: 577px) and (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+  &-description {
+    padding: 0 20px 0 0;
+    &-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1E266D;
+      @media (min-width: 0) and (max-width: 576px) {
+        font-size: 22px;
+      }
+      @media (min-width: 577px) and (max-width: 768px) {
+        font-size: 22px;
+      }
+    }
+    &-subtitle {
+      font-size: 16px;
+      color: #51556E;
+      opacity: .8;
+      margin-bottom: 27px;
+    }
+    &-text {
+      font-size: 18px;
+      color: #51556E;
+      margin-bottom: 20px;
+    }
+    @media (min-width: 0) and (max-width: 576px) {
+      margin-bottom: 10px;
+    }
+    @media (min-width: 577px) and (max-width: 768px) {
+      margin-bottom: 10px;
+    }
+  }
+  @media (min-width: 0) and (max-width: 576px) {
+    padding-top: 40px;
+    padding-left: 20px;
+  }
+}

@@ -13,11 +13,10 @@ const renderer = (req, store) => {
   const content = renderToString(
     <Provider store={store}>
       <Router context={context} location={req.path} query={req.query}>
-          {renderRoutes(routes)}
+        {renderRoutes(routes)}
       </Router>
     </Provider>,
   );
-
   const jsx = `
       <!DOCTYPE html>
       <html>
@@ -28,11 +27,16 @@ const renderer = (req, store) => {
       </head>
 
       <body>
+          <div class="loader">
+            <div class="loader-circle"></div>
+          </div>
           <div id="app">${content}</div>
           <script>
             window.STORE_DATA = ${JSON.stringify(state).replace('<script>', '')}
           </script>
-          <script src="/bundle.js"></script>
+          <script src="/vendors.js"></script>
+          <script src="/runtime.js"></script>
+          <script src="/main.js"></script>
       </body>
       </html>
   `;

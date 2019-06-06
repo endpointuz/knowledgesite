@@ -2,14 +2,27 @@ import express from 'express';
 import { matchRoutes } from 'react-router-config';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebookF, faInstagram, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faTimes,
+  faChevronDown,
+  faChevronUp,
+} from '@fortawesome/free-solid-svg-icons';
 import '@babel/polyfill';
 import renderer from './renderer';
 import createStore from '../utils/createStore';
 import routes from '../utils/routes';
 
 
-library.add(faFacebookF, faInstagram, faTelegramPlane, faBars, faTimes);
+library.add(
+  faFacebookF,
+  faInstagram,
+  faTelegramPlane,
+  faBars,
+  faTimes,
+  faChevronDown,
+  faChevronUp,
+);
 
 const app = express();
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import timeIcon from '../assets/img/time.svg';
@@ -82,7 +83,7 @@ const CourseCard = ({
                       <Container className="p-0">
                         <Row noGutters={true}>
                           <Col xl="auto" className="mx-10px">
-                            <a href={link || '/'} className="more">Подробнее <img src={rarr} alt=""/></a>
+                            <Link to={link || '/'} className="more">Подробнее <img src={rarr} alt=""/></Link>
                           </Col>
                         </Row>
                       </Container>

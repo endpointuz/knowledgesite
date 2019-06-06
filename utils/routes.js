@@ -1,17 +1,24 @@
-import Homepage from '../client/view/Homepage.jsx';
-import AboutUs from '../client/view/AboutUs.jsx';
-import NotFound from '../client/view/NotFound.jsx';
+import Homepage from '../client/view/Homepage';
+import Courses from '../client/view/Courses';
+import AboutUs from '../client/view/AboutUs';
+import JsBegginer from '../client/view/JsBegginer';
+import NotFound from '../client/view/NotFound';
 
 
 const routes = [
   {
-    ...Homepage,
+    component: Homepage,
     path: '/',
     exact: true,
   },
   {
-    component: AboutUs,
-    path: '/about',
+    component: Courses,
+    path: '/courses',
+    exact: true,
+  },
+  {
+    component: JsBegginer,
+    path: '/courses/js-begginer',
     exact: true,
   },
   {

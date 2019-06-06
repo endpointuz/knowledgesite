@@ -3,20 +3,12 @@ import HeaderMenu from '../components/HeaderMenu';
 import HeaderMain from '../components/HeaderMain';
 
 class HeaderContainer extends React.Component {
-  componentDidMount() {
-    this.props.setOffset({ data: window.pageYOffset });
-  }
 
   render() {
     return (
-      <header className="header with-padding">
+      <header className="header with-padding" key={this.props.key}>
         <div className="header-top">
-          <HeaderMenu
-            setOffset={this.props.setOffset}
-            windowOffsetY={this.props.windowOffsetY}
-            setVisibilityMenu={this.props.setVisibilityMenu}
-            menuVisibility={this.props.menuVisibility}
-          />
+          <HeaderMenu />
         </div>
         <HeaderMain />
       </header>

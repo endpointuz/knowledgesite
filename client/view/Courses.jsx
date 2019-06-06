@@ -1,14 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import CourseMain from '../components/CourseMain';
-import ProfitMain from '../components/ProfitMain';
-import TechnologiesMain from '../components/TechnologiesMain';
-import CiteMain from '../components/CiteMain';
-import AppointmentMain from '../components/AppointmentMain';
 import FooterMain from '../components/FooterMain';
 import HeaderContainer from '../containers/HeaderContainer';
 
-class Homepage extends React.Component {
+
+class Courses extends React.Component {
   state = {
     visible: false,
   }
@@ -33,20 +30,9 @@ class Homepage extends React.Component {
     return (
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
         <HeaderContainer />
-        <div className="course">
-          <CourseMain />
-        </div>
-        <div className="profit">
-          <ProfitMain />
-        </div>
-        <div className="technologies">
-          <TechnologiesMain />
-        </div>
-        <div className="cite">
-          <CiteMain />
-        </div>
-        <div className="appointment">
-          <AppointmentMain />
+        <div className="courses-list">
+          <Link to="/courses/js-begginer">First</Link>
+          <Link to="/">Second</Link>
         </div>
         <footer className="footer">
           <FooterMain />
@@ -56,4 +42,4 @@ class Homepage extends React.Component {
   }
 }
 
-export default Homepage;
+export default Courses;

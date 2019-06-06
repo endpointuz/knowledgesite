@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import CourseMain from '../components/CourseMain';
-import ProfitMain from '../components/ProfitMain';
-import TechnologiesMain from '../components/TechnologiesMain';
-import CiteMain from '../components/CiteMain';
-import AppointmentMain from '../components/AppointmentMain';
 import FooterMain from '../components/FooterMain';
-import HeaderContainer from '../containers/HeaderContainer';
+import HeaderOneCourseContainer from '../containers/HeaderOneCourseContainer';
+import OpportunityOneCourseMain from '../components/OpportunityOneCourseMain';
+import ProgramOneCourseMain from '../components/ProgramOneCourseMain';
+import TeacherOneCourseMain from '../components/TeacherOneCourseMain';
+import YougetOneCourseMain from '../components/YougetOneCourseMain';
+import AppointmentMain from '../components/AppointmentMain';
 
-class Homepage extends React.Component {
+
+class JsBegginer extends React.Component {
   state = {
     visible: false,
   }
@@ -32,20 +34,20 @@ class Homepage extends React.Component {
   render() {
     return (
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
-        <HeaderContainer />
-        <div className="course">
-          <CourseMain />
+        <HeaderOneCourseContainer />
+        <div className="opportunity">
+          <OpportunityOneCourseMain />
         </div>
-        <div className="profit">
-          <ProfitMain />
+        <div className="program">
+          <ProgramOneCourseMain />
         </div>
-        <div className="technologies">
-          <TechnologiesMain />
+        <div className="teacher">
+          <TeacherOneCourseMain />
         </div>
-        <div className="cite">
-          <CiteMain />
+        <div className="youget">
+          <YougetOneCourseMain />
         </div>
-        <div className="appointment">
+        <div className="appointment appointment-course">
           <AppointmentMain />
         </div>
         <footer className="footer">
@@ -56,4 +58,4 @@ class Homepage extends React.Component {
   }
 }
 
-export default Homepage;
+export default JsBegginer;

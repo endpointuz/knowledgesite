@@ -1,0 +1,12 @@
+.youget {
+  padding-top: 70px;
+  &-text {
+    font-size: 24px;
+    color: #51556E;
+    line-height: 34px;
+    text-align: center;
+    @media (min-width: 0) and (max-width: 576px) {
+      font-size: 18px;
+    }
+  }
+}

@@ -1,3 +1,12 @@
 .appointment {
   padding-bottom: 80px;
+  &-course {
+    margin-top: 132px;
+    @media (min-width: 0) and (max-width: 576px) {
+      margin-top: 40px;
+    }
+    @media (min-width: 577px) and (max-width: 768px) {
+      margin-top: 40px;
+    }
+  }
 }

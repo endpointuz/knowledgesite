@@ -1,0 +1,27 @@
+.opportunity {
+  background-color: #FAFCFF;
+  padding-top: 90px;
+  &-description {
+    color: #51556E;
+    font-size: 18px;
+    margin-top: 21px;
+    @media (min-width: 0) and (max-width: 576px) {
+      font-size: 16px;
+      padding: 0 15px;
+    }
+  }
+  &-image {
+    @media (min-width: 0) and (max-width: 576px) {
+      width: 100%;
+    }
+    @media (min-width: 577px) and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  @media (min-width: 0) and (max-width: 576px) {
+    padding-top: 45px;
+  }
+  @media (min-width: 577px) and (max-width: 768px) {
+    padding-top: 45px;
+  }
+}

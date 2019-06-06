@@ -14,7 +14,7 @@ const Bars = ({ visible }) => (
   </div>
 );
 
-const HeaderMenu = ({ setOffset, windowOffsetY, setVisibilityMenu, menuVisibility }) => {
+const HeaderMenu = () => {
   const [visibleMenu, toggleMenuVisibility] = useState(false);
   const [pageY, setPageY] = useState(null);
   const [scrollMenuVisible, setScrollMenuVisibility] = useState(true);

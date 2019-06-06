@@ -13,7 +13,7 @@ class HeaderTitle extends React.Component {
     const CustomTag = titleType;
     return (
       <CustomTag
-        className={`etitle etitle-${level} ${className} ${center && 'text-center'}`}
+        className={`etitle etitle-${level} ${className} ${center ? 'text-center' : ''}`}
         style={style || null}
       >
         {children}

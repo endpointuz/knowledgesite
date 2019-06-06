@@ -36,12 +36,12 @@
     @media (min-width: 0) and (max-width: 576px) {
       padding: 0 15px;
     }
-    @media (min-width: 577px) and (max-width: 768px) {
+    @media (min-width: 577px) and (max-width: 767px) {
       padding: 0 15px;
       display: flex;
       justify-content: space-between;
     }
-    @media (min-width: 769px) and (max-width: 991px) {
+    @media (min-width: 768px) and (max-width: 991px) {
       text-align: right;
     }
     @media (min-width: 992px) and (max-width: 1199px) {

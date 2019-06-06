@@ -4,7 +4,6 @@ import HeaderTitle from './ep-components/HeaderTitle';
 import CourseCard from './CourseCard';
 import girlPic from '../assets/img/girl.png';
 import manPic from '../assets/img/manPic.png';
-import { Button } from './ep-components';
 
 const CourseMain = () => (
   <Container className="p-0">
@@ -26,6 +25,7 @@ const CourseMain = () => (
           totalLessons="30 занятий"
           period="3 раза в неделю"
           startAt="Июнь"
+          link="/courses/js-begginer"
         />
       </Col>
       <Col xl={12} className="p-3 p-xl-0">

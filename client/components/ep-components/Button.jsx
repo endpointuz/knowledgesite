@@ -4,7 +4,7 @@ const Button = ({
   type = 'primary',
   children,
   onClick,
-  className,
+  className = '',
   style,
 }) => (
   <button

@@ -9,9 +9,22 @@ const config = {
   entry: ['./client/index.js'],
   output: {
     path: path.join(__dirname, 'public'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: '/',
     pathinfo: false,
+  },
+  optimization: {
+    runtimeChunk: 'single',
+    minimize: true,
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -20,9 +33,6 @@ const config = {
   ],
   resolve: {
     extensions: ['.js', '.json', '.scss'],
-  },
-  optimization: {
-    minimize: true,
   },
 };
 
