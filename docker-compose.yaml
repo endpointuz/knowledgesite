@@ -5,9 +5,9 @@ services:
       context: .
       dockerfile: deploy/Dockerfile
     volumes:
-      - .:/knowlege.uz
+      - .:/code
     restart: always
-    command: "node /knowledge.uz/build/server.js"
+    command: "node build/server.js"
     ports:
       - "9999:3000"
     networks:
