@@ -17,6 +17,7 @@ import './assets/scss/index.scss';
 
 import routes from '../utils/routes.js';
 import createStore from '../utils/createStore';
+import ScrollToTop from './components/ScrollToTop';
 
 
 library.add(
@@ -34,7 +35,9 @@ const store = createStore(window.STORE_DATA, window);
 const jsx = (
   <Provider store={store}>
     <Router>
-      {renderRoutes(routes)}
+      <ScrollToTop>
+        {renderRoutes(routes)}
+      </ScrollToTop>
     </Router>
   </Provider>
 );

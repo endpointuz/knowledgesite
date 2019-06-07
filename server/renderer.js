@@ -5,6 +5,7 @@ import { renderRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
 import '@babel/polyfill';
 import routes from '../utils/routes.js';
+import ScrollToTop from '../client/components/ScrollToTop';
 
 const renderer = (req, store) => {
   const context = {};
@@ -13,7 +14,9 @@ const renderer = (req, store) => {
   const content = renderToString(
     <Provider store={store}>
       <Router context={context} location={req.path} query={req.query}>
-        {renderRoutes(routes)}
+        <ScrollToTop>
+          {renderRoutes(routes)}
+        </ScrollToTop>
       </Router>
     </Provider>,
   );
