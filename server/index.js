@@ -28,6 +28,11 @@ const app = express();
 
 app.use(express.static('public'));
 
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.send('User-agent: *\nDisallow: /');
+});
+
 app.get('*', (req, res) => {
   const store = createStore({});
 
