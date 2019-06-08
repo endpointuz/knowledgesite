@@ -19,6 +19,15 @@ import routes from '../utils/routes.js';
 import createStore from '../utils/createStore';
 import ScrollToTop from './components/ScrollToTop';
 
+import './assets/img/favicons/android-chrome-192x192.png';
+import './assets/img/favicons/android-chrome-512x512.png';
+import './assets/img/favicons/apple-touch-icon.png';
+import './assets/img/favicons/favicon-16x16.png';
+import './assets/img/favicons/favicon-32x32.png';
+import './assets/img/favicons/mstile-150x150.png';
+import './assets/img/favicons/safari-pinned-tab.svg';
+import './assets/img/favicons/favicon.ico';
+
 
 library.add(
   faFacebookF,

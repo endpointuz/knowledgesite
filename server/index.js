@@ -12,6 +12,14 @@ import '@babel/polyfill';
 import renderer from './renderer';
 import createStore from '../utils/createStore';
 import routes from '../utils/routes';
+import '../client/assets/img/favicons/android-chrome-192x192.png';
+import '../client/assets/img/favicons/android-chrome-512x512.png';
+import '../client/assets/img/favicons/apple-touch-icon.png';
+import '../client/assets/img/favicons/favicon-16x16.png';
+import '../client/assets/img/favicons/favicon-32x32.png';
+import '../client/assets/img/favicons/mstile-150x150.png';
+import '../client/assets/img/favicons/safari-pinned-tab.svg';
+import '../client/assets/img/favicons/favicon.ico';
 
 
 library.add(
