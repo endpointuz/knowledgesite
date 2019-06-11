@@ -7155,6 +7155,11 @@ a.text-dark:hover, a.text-dark:focus {
       -ms-transition: all .5s;
       -o-transition: all .5s;
       transition: all .5s; }
+      .ep-btn-primary-inverse.width-100 {
+        width: 100%;
+        -webkit-border-radius: 20%;
+        -moz-border-radius: 20%;
+        border-radius: 190px; }
       .ep-btn-primary-inverse:hover {
         background-color: transparent;
         border: 1px solid #FFB15B;
@@ -7216,6 +7221,105 @@ a.text-dark:hover, a.text-dark:focus {
     border-right: 1px solid #EDEDF0; }
     .accordion-description-wrapper {
       padding: 15px 40px; }
+
+body.noScroll {
+  overflow: hidden; }
+
+.ep-modal {
+  position: fixed;
+  background: rgba(30, 38, 109, 0.6);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 121;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+  .ep-modal-close {
+    text-align: right;
+    padding: 10px 0; }
+    .ep-modal-close a {
+      color: #51556e;
+      font-size: 22px; }
+  .ep-modal-title {
+    text-align: left;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1e266d; }
+    @media (min-width: 0) and (max-width: 576px) {
+      .ep-modal-title {
+        font-size: 20px; } }
+  .ep-modal-subtitle {
+    width: 70%;
+    font-size: 18px;
+    color: #51556e;
+    text-align: left; }
+    @media (min-width: 0) and (max-width: 576px) {
+      .ep-modal-subtitle {
+        font-size: 16px;
+        width: 100%; } }
+  .ep-modal-body {
+    padding-top: 15px; }
+    .ep-modal-body .ep-form-select {
+      width: 100%;
+      background-color: #fff;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #51556e;
+      outline: none;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      font-size: 16px; }
+    .ep-modal-body .ep-form-group {
+      display: flex;
+      justify-content: space-between; }
+      @media (min-width: 0) and (max-width: 576px) {
+        .ep-modal-body .ep-form-group {
+          flex-direction: column; } }
+
+.ep-modal-container {
+  position: fixed;
+  left: 50%;
+  z-index: 122;
+  background: white;
+  border-radius: 4px;
+  padding: 0 30px 60px 30px;
+  -webkit-overflow-scrolling: touch; }
+  @media (min-width: 0) and (max-width: 576px) {
+    .ep-modal-container {
+      padding: 0 20px 20px 20px;
+      width: 90%;
+      max-height: 80vh;
+      overflow: scroll; } }
+  @media (min-width: 577px) and (max-width: 768px) {
+    .ep-modal-container {
+      padding: 0 20px 20px 20px;
+      width: 90%;
+      max-height: 80vh;
+      overflow: scroll; } }
+  @media (min-width: 769px) and (max-width: 991px) {
+    .ep-modal-container {
+      padding: 0 30px 50px 30px;
+      width: 70%;
+      max-height: 80vh;
+      overflow: scroll; } }
+
+.contact-card {
+  display: flex; }
+  .contact-card-icon {
+    padding-right: 12px;
+    color: #FFB15B;
+    font-size: 30px; }
+  .contact-card-text {
+    padding: 12px 30px 0 0; }
+  .contact-card-item {
+    font-size: 16px;
+    color: #51556E; }
 
 .header {
   background-color: #FAFCFF; }
@@ -7609,6 +7713,21 @@ a.text-dark:hover, a.text-dark:focus {
     margin-bottom: 17px; }
   .profit-image {
     width: 100%; }
+  .profit-s-header {
+    display: flex;
+    margin-bottom: 15px; }
+  .profit-s-title {
+    padding: 0 15px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #51556E; }
+  .profit-s-description {
+    font-size: 14px;
+    color: #51556E;
+    margin-left: 35px; }
+  .profit-s-icon {
+    color: #8BC34A;
+    font-size: 20px; }
 
 .technologies {
   padding-bottom: 100px; }
@@ -7850,6 +7969,31 @@ a.text-dark:hover, a.text-dark:focus {
 
 .teacher {
   padding-top: 80px; }
+  .teacher-card {
+    position: relative;
+    border-bottom: 6px solid #FFB15B; }
+    .teacher-card-image {
+      width: 100%; }
+    .teacher-card-text {
+      position: absolute;
+      bottom: 0;
+      padding: 24px 15px;
+      width: 100%;
+      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.99) 99%, black 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.99) 99%, black 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.99) 99%, black 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+      /* IE6-9 */ }
+    .teacher-card-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #FFB15B; }
+    .teacher-card-description {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8); }
   .teacher-header {
     margin-bottom: 69px; }
     @media (min-width: 0) and (max-width: 576px) {
@@ -7859,7 +8003,13 @@ a.text-dark:hover, a.text-dark:focus {
       .teacher-header {
         margin-bottom: 30px; } }
   .teacher-description {
-    padding: 0 20px 0 0; }
+    padding: 63px 30px 64px 68px;
+    background-color: #fff;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.12);
+    position: absolute;
+    left: -10%;
+    top: -180px;
+    z-index: 100; }
     .teacher-description-title {
       font-size: 28px;
       font-weight: 700;
@@ -7881,14 +8031,40 @@ a.text-dark:hover, a.text-dark:focus {
       margin-bottom: 20px; }
     @media (min-width: 0) and (max-width: 576px) {
       .teacher-description {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 30px 30px 30px 30px;
         margin-bottom: 10px; } }
     @media (min-width: 577px) and (max-width: 768px) {
       .teacher-description {
-        margin-bottom: 10px; } }
+        position: relative;
+        margin-bottom: 10px;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 30px 30px 30px 30px; } }
+    @media (min-width: 769px) and (max-width: 991px) {
+      .teacher-description {
+        position: relative;
+        margin-bottom: 10px;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 30px 30px 30px 30px; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .teacher-description {
+        position: relative;
+        margin-bottom: 10px;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 30px 30px 30px 30px; } }
   @media (min-width: 0) and (max-width: 576px) {
     .teacher {
       padding-top: 40px;
-      padding-left: 20px; } }
+      padding-left: 20px;
+      padding-right: 20px; } }
 
 .youget {
   padding-top: 70px; }
@@ -7900,6 +8076,21 @@ a.text-dark:hover, a.text-dark:focus {
     @media (min-width: 0) and (max-width: 576px) {
       .youget-text {
         font-size: 18px; } }
+
+.start-course-title {
+  font-size: 24px;
+  color: #51556E;
+  text-align: center;
+  font-weight: 700; }
+  .start-course-title .important {
+    color: #FFB15B; }
+
+.contacts .map {
+  width: 100%;
+  height: 460px;
+  -webkit-box-shadow: 0 10px 40px rgba(30, 38, 109, 0.12);
+  -moz-box-shadow: 0 10px 40px rgba(30, 38, 109, 0.12);
+  box-shadow: 0 10px 40px rgba(30, 38, 109, 0.12); }
 
 html, body {
   font-size: 16px; }

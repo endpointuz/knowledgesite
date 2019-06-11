@@ -1,14 +1,19 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import { HeaderTitle, Button } from './ep-components';
+import { HeaderTitle, Modal } from './ep-components';
 import girlBig from '../assets/img/girl-big.png';
 import start from '../assets/img/start.svg';
 import calendar from '../assets/img/calendar.svg';
 import timeIcon from '../assets/img/time.svg';
 import cashIcon from '../assets/img/cash.svg';
 
-const HeaderOneCourseMain = ({ startAt, totalLessons, period, price }) => (
+const HeaderOneCourseMain = ({
+  startAt,
+  totalLessons,
+  period,
+  price,
+}) => (
   <div className="header-main-course">
     <Container className="p-0">
       <Row noGutters={true} className="marginBottom">
@@ -26,9 +31,10 @@ const HeaderOneCourseMain = ({ startAt, totalLessons, period, price }) => (
               и концепциями программирования
             </p>
             <div className="header-main-course-btn" style={{ marginTop: 24 }}>
-              <Button type="primary" style={{ margin: '0 auto' }}>
-                Записаться сейчас
-              </Button>
+              <Modal
+                buttonType="primary"
+                buttonText="Записаться сейчас"
+              />
             </div>
           </div>
         </Col>

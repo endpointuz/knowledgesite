@@ -13,4 +13,25 @@
   &-image {
     width: 100%;
   }
+  &-s {
+    &-header {
+      display: flex;
+      margin-bottom: 15px;
+    }
+    &-title {
+      padding: 0 15px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #51556E;
+    }
+    &-description {
+      font-size: 14px;
+      color: #51556E;
+      margin-left: 35px;
+    }
+    &-icon {
+      color: #8BC34A;
+      font-size: 20px;
+    }
+  }
 }

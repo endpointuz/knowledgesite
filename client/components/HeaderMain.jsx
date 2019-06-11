@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import { HeaderTitle, Button } from './ep-components';
+import { HeaderTitle, Modal } from './ep-components';
 
 const HeaderMain = () => (
   <div className="header-main">
@@ -17,9 +17,10 @@ const HeaderMain = () => (
               Лучшие теории и практики построенные на авторских методиках от ведущих специалистов
             </p>
             <div style={{ textAlign: 'center', marginTop: 20 }}>
-              <Button type="primary" style={{ margin: '0 auto' }}>
-                Записаться сейчас
-              </Button>
+              <Modal
+                buttonType="primary"
+                buttonText="Записаться сейчас"
+              />
             </div>
           </div>
         </Col>

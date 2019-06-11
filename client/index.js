@@ -10,6 +10,11 @@ import {
   faTimes,
   faChevronDown,
   faChevronUp,
+  faCheck,
+  faHome,
+  faHistory,
+  faPhone,
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import '@babel/polyfill';
 
@@ -37,6 +42,11 @@ library.add(
   faTimes,
   faChevronDown,
   faChevronUp,
+  faCheck,
+  faHome,
+  faHistory,
+  faPhone,
+  faEnvelope,
 );
 
 const store = createStore(window.STORE_DATA, window);

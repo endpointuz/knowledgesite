@@ -27,7 +27,7 @@ const HeaderMenu = () => {
   const handleScroll = () => {
     const prevScrollpos = pageY;
     const currentScrollPos = window.pageYOffset;
-    const visible = prevScrollpos > currentScrollPos;
+    const visible = (prevScrollpos > currentScrollPos) || (currentScrollPos < 100);
     setPageY(currentScrollPos);
     setScrollMenuVisibility(visible);
   };
@@ -65,6 +65,7 @@ const HeaderMenu = () => {
                           <Link to="/" className="elink elink-menu">О проекте</Link>
                           <Link to="/courses" className="elink elink-menu">Курсы</Link>
                           <Link to="/blog" className="elink elink-menu">Блог</Link>
+                          <Link to="/contacts" className="elink elink-menu">Контакты</Link>
                         </HorizontalNavbar>
                       </nav>
                     </Col>

@@ -7,6 +7,11 @@ import {
   faTimes,
   faChevronDown,
   faChevronUp,
+  faCheck,
+  faHome,
+  faHistory,
+  faPhone,
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import '@babel/polyfill';
 import renderer from './renderer';
@@ -30,6 +35,11 @@ library.add(
   faTimes,
   faChevronDown,
   faChevronUp,
+  faCheck,
+  faHome,
+  faHistory,
+  faPhone,
+  faEnvelope,
 );
 
 const app = express();

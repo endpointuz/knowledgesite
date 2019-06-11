@@ -5,6 +5,8 @@
 @import "partials/menulist";
 @import "partials/buttons";
 @import "partials/accordion";
+@import "partials/modal";
+@import "partials/contactCard";
 @import "header";
 @import "courseCard";
 @import "course";
@@ -17,6 +19,8 @@
 @import "program";
 @import "teacher";
 @import "youget";
+@import "courseStart";
+@import "contacts";
 
 html, body {
   font-size: 16px;

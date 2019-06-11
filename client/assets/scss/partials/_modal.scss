@@ -1,0 +1,97 @@
+body.noScroll {
+  overflow: hidden;
+}
+.ep-modal {
+  position: fixed;
+  background: rgba(30, 38, 109, .6);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 121;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  &-close {
+    text-align: right;
+    padding: 10px 0;
+    a {
+      color: rgba(81, 85, 110, 1);
+      font-size: 22px;
+    }
+  }
+  &-title {
+    text-align: left;
+    font-size: 36px;
+    font-weight: 700;
+    color: rgba(30, 38, 109, 1);
+    @media (min-width: 0) and (max-width: 576px) {
+      font-size: 20px;
+    }
+  }
+  &-subtitle {
+    width: 70%;
+    font-size: 18px;
+    color: rgba(81, 85, 110, 1);
+    text-align: left;
+    @media (min-width: 0) and (max-width: 576px) {
+      font-size: 16px;
+      width: 100%;
+    }
+  }
+  &-body {
+    padding-top: 15px;
+    .ep-form {
+      &-select {
+        width: 100%;
+        background-color: #fff;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid rgba(81, 85, 110, 1);
+        outline: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        font-size: 16px;
+      }
+      &-group {
+        display: flex;
+        justify-content: space-between;
+        @media (min-width: 0) and (max-width: 576px) {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+.ep-modal-container {
+  position: fixed;
+  left: 50%;
+  z-index: 122;
+  background: white;
+  border-radius: 4px;
+  padding: 0 30px 60px 30px;
+  -webkit-overflow-scrolling: touch;
+  @media (min-width: 0) and (max-width: 576px) {
+    padding: 0 20px 20px 20px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: scroll;
+  }
+  @media (min-width: 577px) and (max-width: 768px) {
+    padding: 0 20px 20px 20px;
+    width: 90%;
+    max-height: 80vh;
+    overflow: scroll;
+  }
+  @media (min-width: 769px) and (max-width: 991px) {
+    padding: 0 30px 50px 30px;
+    width: 70%;
+    max-height: 80vh;
+    overflow: scroll;
+  }
+}

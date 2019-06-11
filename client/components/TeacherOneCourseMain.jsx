@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { HeaderTitle } from './ep-components';
+import { HeaderTitle, TeacherCard } from './ep-components';
 
-import shash from '../assets/img/shash.jpg';
+import igorPic from '../assets/img/igor.jpg';
 
 const TeacherOneCourseMain = () => {
 
@@ -15,22 +15,24 @@ const TeacherOneCourseMain = () => {
           </HeaderTitle>
         </Col>
         <Col xl={6}>
+          <TeacherCard
+            img={igorPic}
+            title="Игорь Ким"
+            description="Сооснователь и генеральный директор ENDPOINT"
+          />
+        </Col>
+        <Col xl={6}>
           <div className="teacher-description">
-            <h3 className="teacher-description-title">Шашлындос Шашлындосов</h3>
-            <p className="teacher-description-subtitle">Сооснователь, генеральный директор ENDPOINT</p>
             <p className="teacher-description-text">
-              В Front-end разработке около 3 лет.
+              В Front-end разработке около 5 лет.
               За это время успел поработать как над обычными лендингами и разработкой магазинов,
-              так и на более редких задачах, таких как электронные мобильные кошельки и
-              банковские системы.
+              так и на более редких задачах. Работал над высоконагруженными веб-проектами в крупных
+              компаниях США и Европы.
             </p>
             <p className="teacher-description-text">
               Сооснователь cтудии ENDPOINT. Среди клиентов которых: МВД РУз, UZBAT
             </p>
           </div>
-        </Col>
-        <Col xl={6}>
-          <img src={shash} alt="" style={{ width: '90%' }}/>
         </Col>
       </Row>
     </Container>

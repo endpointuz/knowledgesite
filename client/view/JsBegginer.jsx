@@ -7,7 +7,7 @@ import OpportunityOneCourseMain from '../components/OpportunityOneCourseMain';
 import ProgramOneCourseMain from '../components/ProgramOneCourseMain';
 import TeacherOneCourseMain from '../components/TeacherOneCourseMain';
 import YougetOneCourseMain from '../components/YougetOneCourseMain';
-import AppointmentMain from '../components/AppointmentMain';
+import CourseStart from '../components/CourseStart';
 
 
 class JsBegginer extends React.Component {
@@ -48,7 +48,10 @@ class JsBegginer extends React.Component {
           <YougetOneCourseMain />
         </div>
         <div className="appointment appointment-course">
-          <AppointmentMain />
+          <CourseStart
+            startDate="5 июля"
+            price="600 000"
+          />
         </div>
         <footer className="footer">
           <FooterMain />

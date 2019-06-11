@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import { HeaderTitle, Button } from './ep-components';
+import { HeaderTitle, Modal } from './ep-components';
 
 const AppointmentMain = () => (
   <div className="appointment-main">
@@ -21,9 +21,10 @@ const AppointmentMain = () => (
               программирования изучить.
             </p>
             <div style={{ textAlign: 'center', marginTop: 20 }}>
-              <Button type="primary-inverse" style={{ margin: '0 auto' }}>
-                Записаться сейчас
-              </Button>
+              <Modal
+                buttonType="primary-inverse"
+                buttonText="Записаться сейчас"
+              />
             </div>
           </div>
         </Col>
