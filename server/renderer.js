@@ -34,6 +34,7 @@ const renderer = (req, store) => {
           <link rel="icon" sizes="192x192" href="/img/android-chrome-192x192.png">
           <link rel="icon" sizes="512x512" href="/img/android-chrome-512x512.png">
           <link rel="stylesheet" href="/main.css" />
+          <meta name="mailru-domain" content="vSlwJnaL3xoGZwxr" />
       </head>
 
       <body>

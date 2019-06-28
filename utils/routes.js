@@ -2,6 +2,7 @@ import Homepage from '../client/view/Homepage';
 import Courses from '../client/view/Courses';
 import Contacts from '../client/view/Contacts';
 import JsBegginer from '../client/view/JsBegginer';
+import Blog from '../client/view/Blog';
 import NotFound from '../client/view/NotFound';
 
 
@@ -14,6 +15,11 @@ const routes = [
   {
     component: Courses,
     path: '/courses',
+    exact: true,
+  },
+  {
+    component: Blog,
+    path: '/blog',
     exact: true,
   },
   {
