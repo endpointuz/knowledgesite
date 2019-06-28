@@ -6,7 +6,7 @@ class HeaderBlogContainer extends React.Component {
 
   render() {
     return (
-      <header className="header header-course with-padding">
+      <header className="header with-padding">
         <div className="header-top">
           <HeaderMenu />
         </div>

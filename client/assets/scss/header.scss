@@ -1,5 +1,9 @@
 .header {
   background-color: #FAFCFF;
+  &-blog {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   &.header-course {
     background-color: #fff;
   }

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import FooterMain from '../components/FooterMain';
 import HeaderContainer from '../containers/HeaderContainer';
 import HeaderBlogContainer from '../containers/HeaderBlogContainer';
+import BlogArticlesContainer from '../containers/BlogArticlesContainer';
 
 
 class Blog extends React.Component {
@@ -31,8 +32,8 @@ class Blog extends React.Component {
     return (
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
         <HeaderBlogContainer />
-        <div className="courses-list">
-          test
+        <div className="blog">
+          <BlogArticlesContainer />
         </div>
         <footer className="footer">
           <FooterMain />

@@ -16,6 +16,13 @@
     font-size: 33px;
     font-weight: 700;
     color: #FFFFFF;
+    @at-root {
+      h3#{&} {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1E266D;
+      }
+    }
     @media (min-width: 0) and (max-width: 576px) {
       font-size: 25px;
     }
@@ -50,3 +57,4 @@ h2.etitle-1 {
     padding: 0 15px;
   }
 }
+

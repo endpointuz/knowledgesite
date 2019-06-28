@@ -15,7 +15,9 @@ import {
   faHistory,
   faPhone,
   faEnvelope,
+  faExternalLinkAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-regular-svg-icons';
 import '@babel/polyfill';
 
 import './assets/scss/index.scss';
@@ -47,6 +49,8 @@ library.add(
   faHistory,
   faPhone,
   faEnvelope,
+  faClock,
+  faExternalLinkAlt,
 );
 
 const store = createStore(window.STORE_DATA, window);
