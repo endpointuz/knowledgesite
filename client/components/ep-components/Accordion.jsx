@@ -31,8 +31,8 @@ const Accordion = ({
   return (
     <div className="accordion">
       {blocks.map((el, i) => (
-        <div className="accordion-block" key={el.id}>
-          <div className="accordion-title" data-target={el.id} onClick={handleTitleClick}>
+        <div className="accordion-block" key={String(el.id)}>
+          <div className="accordion-title" data-target={String(el.id)} onClick={handleTitleClick}>
             <Container>
               <Row noGutters={true} className="align-items-center flex-nowrap flex-lg-wrap">
                 <Col xs="auto" xl="auto">
@@ -43,15 +43,15 @@ const Accordion = ({
                 </Col>
                 <Col xs="auto" xl="auto" className="ml-auto">
                   <div className="accordion-title-icon">
-                    <FontAwesomeIcon icon={isVisible('one') ? 'chevron-up' : 'chevron-down'} style={{ color: '#FFB15B' }} />
+                    <FontAwesomeIcon icon={isVisible(String(el.id)) ? 'chevron-up' : 'chevron-down'} style={{ color: '#FFB15B' }} />
                   </div>
                 </Col>
               </Row>
             </Container>
           </div>
-          <Content className="accordion-description" pose={isVisible(el.id) ? 'open' : 'closed'}>
+          <Content className="accordion-description" pose={isVisible(String(el.id)) ? 'open' : 'closed'}>
             <div className="accordion-description-wrapper">
-              {el.text}
+              {el.description}
             </div>
           </Content>
         </div>

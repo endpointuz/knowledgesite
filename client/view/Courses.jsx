@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import FooterMain from '../components/FooterMain';
 import HeaderContainer from '../containers/HeaderContainer';
+import CourseMain from '../components/CourseMain';
 
 
 class Courses extends React.Component {
@@ -30,9 +31,8 @@ class Courses extends React.Component {
     return (
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
         <HeaderContainer />
-        <div className="courses-list">
-          <Link to="/courses/js-begginer">First</Link>
-          <Link to="/">Second</Link>
+        <div className="course">
+          <CourseMain />
         </div>
         <footer className="footer">
           <FooterMain />

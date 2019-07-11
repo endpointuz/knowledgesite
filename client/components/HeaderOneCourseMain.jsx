@@ -13,6 +13,9 @@ const HeaderOneCourseMain = ({
   totalLessons,
   period,
   price,
+  title,
+  description,
+  courseImage,
 }) => (
   <div className="header-main-course">
     <Container className="p-0">
@@ -23,12 +26,10 @@ const HeaderOneCourseMain = ({
               Курс
             </HeaderTitle>
             <HeaderTitle center={false} titleType="h2">
-              Введение в программирование
+              {title}
             </HeaderTitle>
             <p className="esubtitle text-left">
-              Этот курс рассчитан на новичков без опыта в программировании.
-              На протяжении десятков уроков вы познакомитесь с фундаментальнымипонятиями
-              и концепциями программирования
+              {description}
             </p>
             <div className="header-main-course-btn" style={{ marginTop: 24 }}>
               <Modal
@@ -39,7 +40,7 @@ const HeaderOneCourseMain = ({
           </div>
         </Col>
         <Col lg={12} xl={4}>
-          <img src={girlBig} alt="" className="header-main-course-image" />
+          <img src={courseImage} alt="" className="header-main-course-image" />
         </Col>
       </Row>
       <Row noGutters={true}>
@@ -96,7 +97,7 @@ const HeaderOneCourseMain = ({
                   <img src={cashIcon} />
                 </Col>
                 <Col xs="auto" xl="12">
-                  <p className="data">{price}</p>
+                  <p className="data">{price} сумов</p>
                   <p className="title">стоимость</p>
                 </Col>
               </Row>

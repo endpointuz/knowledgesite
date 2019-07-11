@@ -57,20 +57,7 @@ class BlogArticlesContainer extends React.Component {
       <div className="blog-articles">
         <Container>
           <Row>
-            <Col lg={8}>
-              <div className="blog-articles-list">
-                {articles.map(article => (
-                  <BlogCard
-                    key={article.key}
-                    {...article}
-                  />
-                ))}
-              </div>
-              <Pagination
-                onChange={this.handlePaginationChange}
-              />
-            </Col>
-            <Col lg={4}>
+            <Col lg={{ span: 4, order: 2 }}>
               <div className="blog-categories">
                 <div className="blog-categories-wrapper">
                   <HeaderTitle center={false} titleType="h3" level={3}>
@@ -88,6 +75,19 @@ class BlogArticlesContainer extends React.Component {
                   ))}
                 </div>
               </div>
+            </Col>
+            <Col lg={{ span: 8, order: 1 }}>
+              <div className="blog-articles-list">
+                {articles.map(article => (
+                  <BlogCard
+                    key={article.key}
+                    {...article}
+                  />
+                ))}
+              </div>
+              <Pagination
+                onChange={this.handlePaginationChange}
+              />
             </Col>
           </Row>
         </Container>

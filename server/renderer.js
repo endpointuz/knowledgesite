@@ -41,7 +41,7 @@ const renderer = (req, store) => {
           <div class="loader">
             <div class="loader-circle"></div>
           </div>
-          <div id="app">${content}</div>
+          <div id="app" class="flex-container">${content}</div>
           <script>
             window.STORE_DATA = ${JSON.stringify(state).replace('<script>', '')}
           </script>

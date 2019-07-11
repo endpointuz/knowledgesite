@@ -2,10 +2,12 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import HeaderTitle from './ep-components/HeaderTitle';
 import CourseCard from './CourseCard';
-import girlPic from '../assets/img/girl.png';
-import manPic from '../assets/img/manPic.png';
 
-const CourseMain = () => (
+import { courses } from '../content';
+
+const CourseMain = (
+  { filter = () => true, showLinkToAllCourses = false },
+) => (
   <Container className="p-0">
     <Row style={{ marginBottom: 30 }}>
       <Col xl={12}>
@@ -17,37 +19,35 @@ const CourseMain = () => (
       </Col>
     </Row>
     <Row noGutters={true}>
-      <Col xl={12} style={{ marginBottom: 30 }} className="p-3 p-xl-0">
-        <CourseCard
-          img={girlPic}
-          title="Введение в программирование"
-          description="Этот курс рассчитан на новичков без опыта в программировании. На протяжении десятков уроков вы познакомитесь с фундаментальными понятиями и концепциями программирования, научитесь писать простые программы, понимать ошибки, которые возникают при запуске и выполнении кода"
-          totalLessons="30 занятий"
-          period="3 раза в неделю"
-          startAt="Июнь"
-          link="/courses/js-begginer"
-        />
-      </Col>
-      <Col xl={12} className="p-3 p-xl-0">
-        <CourseCard
-          img={manPic}
-          title="Frontend. ReactJS"
-          description="В этом курсе мы затронем все аспекты его работы и шаг за шагом, начиная с простых компонентов, дойдем до взаимодействия с бекендом и интеграции с кодом"
-          totalLessons="40 занятий"
-          period="3 раза в неделю"
-          startAt="Июнь"
-        />
-      </Col>
+      {courses.filter(filter).map(course => (
+        <Col xl={12} style={{ marginBottom: 30 }} className="p-3 p-xl-0" key={course.id}>
+          <CourseCard
+            img={course.img}
+            title={course.title}
+            description={course.description}
+            totalLessons={course.totalLessons}
+            period={course.period}
+            startAt={course.startAt}
+            link={course.link}
+          />
+        </Col>
+      ))}
     </Row>
-    <Row>
-      <Col xl={12}>
-        <div style={{ textAlign: 'center', marginTop: 51 }}>
-          <a href="/" className="more" style={{ margin: '0 auto' }}>
-            Посмотреть все курсы
-          </a>
-        </div>
-      </Col>
-    </Row>
+    {
+      showLinkToAllCourses
+        ? (
+          <Row>
+            <Col xl={12}>
+              <div style={{ textAlign: 'center', marginTop: 51 }}>
+                <a href="/courses" className="more" style={{ margin: '0 auto' }}>
+                  Посмотреть все курсы
+                </a>
+              </div>
+            </Col>
+          </Row>
+        )
+        : null
+    }
   </Container>
 );
 

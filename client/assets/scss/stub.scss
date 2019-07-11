@@ -1,0 +1,87 @@
+html, body{
+  height: 100%;
+  text-align: center;
+  color: rgb(27,27,27);
+}
+
+body{
+  background-color: #FAFCFF;
+}
+.flex-container{
+  display: inline-flex ;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.flex-item{
+  align-self: center !important;
+}
+
+
+#borderText{
+  font-size: 28px;
+  font-family: MedItalic;
+}
+
+img{
+  width: 75%;
+}
+
+#text{
+  font-size: 28px;
+  font-family: MedItalic;
+}
+
+hr{
+  height: 1px;
+  color: rgb(27,27,27);
+  background-color: rgb(27,27,27);
+  border: none;
+  width: 55%;
+}
+
+@media only screen and (max-width: 600px) {
+  img {
+    width: 65%;
+  }
+
+  #text, #borderText {
+    font-size: 20px;
+  }
+
+  hr {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  img {
+    width: 65%;
+  }
+
+  #text, #borderText {
+    font-size: 16px;
+  }
+
+  hr{
+    width: 47%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  img {
+    width: 60%;
+  }
+
+  #text, #borderText {
+    font-size: 12px;
+  }
+
+  hr {
+    width: 47%;
+  }
+}
+
+

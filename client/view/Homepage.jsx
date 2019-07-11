@@ -34,7 +34,10 @@ class Homepage extends React.Component {
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
         <HeaderContainer />
         <div className="course">
-          <CourseMain />
+          <CourseMain
+            filter={course => (course.id === 'html-beginner' || course.id === 'js-beginner')}
+            showLinkToAllCourses={true}
+          />
         </div>
         <div className="profit">
           <ProfitMain />
