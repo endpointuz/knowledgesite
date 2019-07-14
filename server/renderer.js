@@ -3,6 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter as Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import '@babel/polyfill';
 import routes from '../utils/routes.js';
 import ScrollToTop from '../client/components/ScrollToTop';
@@ -20,12 +21,19 @@ const renderer = (req, store) => {
       </Router>
     </Provider>,
   );
+
+  const helmet = Helmet.renderStatic();
   const jsx = `
       <!DOCTYPE html>
       <html>
       <head>
+          ${helmet.title.toString()}
+          ${helmet.meta.toString()}
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          <meta http-equiv="content-language" content="ru" />
+          <meta name="robots" content="index,follow" />
           <link rel="icon" sizes="16x16" href="/img/favicon-16x16.png">
           <link rel="icon" sizes="32x32" href="/img/favicon-32x32.png">
           <link rel="icon" href="/img/favicon.ico">

@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import CourseMain from '../components/CourseMain';
 import ProfitMain from '../components/ProfitMain';
 import TechnologiesMain from '../components/TechnologiesMain';
@@ -7,13 +8,25 @@ import CiteMain from '../components/CiteMain';
 import AppointmentMain from '../components/AppointmentMain';
 import FooterMain from '../components/FooterMain';
 import HeaderContainer from '../containers/HeaderContainer';
+import * as actions from '../actions';
 
+const mapStateToProps = state => ({
+  coursesData: state.coursesData,
+});
+
+const actionCreators = {
+  getCourses: actions.getCourses,
+};
+
+@connect(mapStateToProps, actionCreators)
 class Homepage extends React.Component {
   state = {
     visible: false,
   }
 
   componentDidMount() {
+    const { getCourses } = this.props;
+    getCourses(30);
     setTimeout(() => {
       this.setState({ visible: true });
       document.querySelector('.loader').classList.add('loaded');
@@ -30,33 +43,61 @@ class Homepage extends React.Component {
   }
 
   render() {
+    const { coursesData } = this.props;
+
     return (
-      <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
-        <HeaderContainer />
-        <div className="course">
-          <CourseMain
-            filter={course => (course.id === 'html-beginner' || course.id === 'js-beginner')}
-            showLinkToAllCourses={true}
-          />
+      <>
+        <Helmet>
+          <title>Главная | Knowledge</title>
+          <meta name="description" content="Главная страница сайта knowledge.uz. Учебные курсы от профессиональной команды разработчиков в Ташкент" />
+          <meta name="keywords" content="учебные курсы в Ташкент, программирование, веб-технологии, проекты, учебный центр, создание сайтов" />
+
+          <meta property="og:type" content="article" />
+          <meta property="og:site_name" content="Knowledge.uz" />
+          <meta property="og:title" content="Knowledge.uz | Лучшие курсы программирования в Ташкенте" />
+          <meta property="og:description" content="Мы расскажем, покажем и научим тебя провильному порграммированию и дадим возможность стажироваться!" />
+          <meta property="og:url" content="https://knowledge.uz" />
+          <meta property="og:image" content={coursesData.results.length > 0 ? coursesData.results[0].picture : null} />
+          <meta property="og:locale" content="ru_RU" />
+        </Helmet>
+        <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
+          <HeaderContainer />
+          <div className="course">
+            <CourseMain
+              coursesData={coursesData}
+              courseCount={2}
+              showLinkToAllCourses={true}
+            />
+          </div>
+          <div className="profit">
+            <ProfitMain />
+          </div>
+          <div className="technologies">
+            <TechnologiesMain />
+          </div>
+          <div className="cite">
+            <CiteMain />
+          </div>
+          <div className="appointment">
+            <AppointmentMain />
+          </div>
+          <footer className="footer">
+            <FooterMain />
+          </footer>
         </div>
-        <div className="profit">
-          <ProfitMain />
-        </div>
-        <div className="technologies">
-          <TechnologiesMain />
-        </div>
-        <div className="cite">
-          <CiteMain />
-        </div>
-        <div className="appointment">
-          <AppointmentMain />
-        </div>
-        <footer className="footer">
-          <FooterMain />
-        </footer>
-      </div>
+      </>
     );
   }
 }
 
-export default Homepage;
+const loadData = (store, match, cookie) => {
+  const actionsToBeDispatched = [];
+  actionsToBeDispatched.push(store.dispatch(actions.getCourses(30)));
+
+  return Promise.all(actionsToBeDispatched);
+};
+
+export default {
+  loadData,
+  component: Homepage,
+};

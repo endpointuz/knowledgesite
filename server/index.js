@@ -13,6 +13,7 @@ import {
   faPhone,
   faEnvelope,
   faExternalLinkAlt,
+  faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import '@babel/polyfill';
@@ -44,6 +45,7 @@ library.add(
   faEnvelope,
   faClock,
   faExternalLinkAlt,
+  faSpinner,
 );
 
 const app = express();

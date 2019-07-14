@@ -1,17 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 import FooterMain from '../components/FooterMain';
 import HeaderContainer from '../containers/HeaderContainer';
 import CourseMain from '../components/CourseMain';
+import * as actions from '../actions';
 
 
+
+const mapStateToProps = state => ({
+  coursesData: state.coursesData,
+});
+
+const actionCreators = {
+  getCourses: actions.getCourses,
+};
+
+@connect(mapStateToProps, actionCreators)
 class Courses extends React.Component {
   state = {
     visible: false,
   }
 
   componentDidMount() {
+    const { getCourses } = this.props;
+    getCourses(30);
     setTimeout(() => {
       this.setState({ visible: true });
       document.querySelector('.loader').classList.add('loaded');
@@ -28,11 +42,29 @@ class Courses extends React.Component {
   }
 
   render() {
+    const { coursesData } = this.props;
+
     return (
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
+        <Helmet>
+          <title>Все курсы | Knowledge</title>
+          <meta name="description" content="Страница всех курсов от профессиональной команды разработчиков endpoint.uz" />
+          <meta name="keywords" content="учебные курсы в Ташкент, программирование, веб-технологии, проекты, учебный центр, создание сайтов, endpoint.uz" />
+
+          <meta property="og:type" content="article" />
+          <meta property="og:site_name" content="Knowledge.uz" />
+          <meta property="og:title" content="Knowledge.uz | Лучшие курсы программирования в Ташкенте" />
+          <meta property="og:description" content="Мы расскажем, покажем и научим тебя провильному порграммированию и дадим возможность стажироваться!" />
+          <meta property="og:url" content="https://knowledge.uz" />
+          <meta property="og:image" content={coursesData.results.length > 0 ? coursesData.results[0].picture : null} />
+          <meta property="og:locale" content="ru_RU" />
+        </Helmet>
         <HeaderContainer />
         <div className="course">
-          <CourseMain />
+          <CourseMain
+            coursesData={coursesData}
+            showLinkToAllCourses={false}
+          />
         </div>
         <footer className="footer">
           <FooterMain />

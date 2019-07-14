@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import moment from 'moment';
 
 import { HeaderTitle, Modal } from './ep-components';
 import girlBig from '../assets/img/girl-big.png';
@@ -7,6 +8,9 @@ import start from '../assets/img/start.svg';
 import calendar from '../assets/img/calendar.svg';
 import timeIcon from '../assets/img/time.svg';
 import cashIcon from '../assets/img/cash.svg';
+
+
+moment.locale('ru');
 
 const HeaderOneCourseMain = ({
   startAt,
@@ -82,7 +86,7 @@ const HeaderOneCourseMain = ({
                   <img src={start} />
                 </Col>
                 <Col xs="auto" xl="12">
-                  <p className="data">{startAt}</p>
+                  <p className="data">{moment(startAt).format('D MMMM')}</p>
                   <p className="title">старт</p>
                 </Col>
               </Row>

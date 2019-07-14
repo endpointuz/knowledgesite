@@ -62,9 +62,8 @@ const HeaderMenu = () => {
                       </button>
                       <nav className={`header-navbar-nav ${visibleMenu ? 'visible' : null}`}>
                         <HorizontalNavbar>
-                          <Link to="/" className="elink elink-menu">О проекте</Link>
+                          <Link to="/about" className="elink elink-menu">О проекте</Link>
                           <Link to="/courses" className="elink elink-menu">Курсы</Link>
-                          <Link to="/blog" className="elink elink-menu">Блог</Link>
                           <Link to="/contacts" className="elink elink-menu">Контакты</Link>
                         </HorizontalNavbar>
                       </nav>

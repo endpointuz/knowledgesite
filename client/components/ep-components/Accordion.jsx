@@ -9,7 +9,7 @@ const Content = pose.div({
 });
 
 const Accordion = ({
-  blocks,
+  blocks = [],
 }) => {
   // const { title, description } = blocks;
   const [visibleBlocks, setVisibleBlock] = useState([]);
@@ -39,7 +39,7 @@ const Accordion = ({
                   <div className="accordion-title-num">{i + 1}</div>
                 </Col>
                 <Col xs={10} xl="auto" className="px-4">
-                  <div className="accordion-title-name">{el.title}</div>
+                  <div className="accordion-title-name">{el.name}</div>
                 </Col>
                 <Col xs="auto" xl="auto" className="ml-auto">
                   <div className="accordion-title-icon">

@@ -21,9 +21,64 @@ const windowData = handleActions({
 });
 
 const coursesData = handleActions({
-}, courses);
+  [actions.getCoursesSuccess](state, { payload: { data } }) {
+    return {
+      ...data,
+      state: 'success',
+    };
+  },
+}, {
+  state: null,
+  results: [],
+});
+
+const courseDetail = handleActions({
+  [actions.getCourseDetailSuccess](state, { payload: { data } }) {
+    return {
+      ...data,
+      state: 'success',
+    };
+  },
+  [actions.getCourseDetailFailure](state, { payload: { data } }) {
+    return {
+      statusCode: data.status,
+      state: 'failure',
+    };
+  },
+}, {
+  results: [],
+  statusCode: null,
+  state: null,
+});
+
+const requestCallData = handleActions({
+  [actions.requestCallRequest](state) {
+    return {
+      ...state,
+      state: 'request',
+    };
+  },
+  [actions.requestCallSuccess](state) {
+    return {
+      ...state,
+      state: 'success',
+    };
+  },
+  [actions.requestCallFailure](state, { payload: { errors } }) {
+    return {
+      ...state,
+      errors,
+      state: 'failure',
+    };
+  },
+}, {
+  errors: [],
+  state: null,
+});
 
 export default combineReducers({
   windowData,
   coursesData,
+  courseDetail,
+  requestCallData,
 });

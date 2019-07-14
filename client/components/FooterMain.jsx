@@ -36,11 +36,9 @@ const CompanySocials = () => (
 );
 
 const menuItems = [
-  { title: 'О проекте', link: '/', id: 1 },
-  { title: 'Отзывы', link: '/', id: 2 },
-  { title: 'Помощь', link: '/', id: 3 },
-  { title: 'Кусы', link: '/', id: 4 },
-  { title: 'Блог', link: '/', id: 5 },
+  { title: 'О проекте', link: '/about', id: 1 },
+  { title: 'Курсы', link: '/courses', id: 4 },
+  { title: 'Контакты', link: '/contacts', id: 5 },
 ];
 
 const CompanyMenu = () => (
@@ -75,7 +73,7 @@ const FooterMain = () => (
       <Col sm={6} xl={4}>
         <p className="footer-label">
           <span className='footer-label-title'>Создан командой</span>
-          <a href="/">
+          <a href="https://endpoint.uz" target="_blank" rel="noopener noreferrer">
             <img src={smallFooterLogo} alt="" />
           </a>
         </p>

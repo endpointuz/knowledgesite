@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import posed, { PoseGroup } from 'react-pose';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -6,10 +7,31 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
+import Snackbar from '@material-ui/core/Snackbar';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import validator from 'validator';
+import MaskedInput from 'react-text-mask';
+
+import * as actions from '../../actions';
 
 import Button from './Button';
+
+const TextMaskCustom = (props) => {
+  const { inputRef, ...other } = props;
+
+  return (
+    <MaskedInput
+      {...other}
+      ref={(ref) => {
+        inputRef(ref ? ref.inputElement : null);
+      }}
+      mask={['+', 9, 9, 8, ' ', '(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
+      placeholderChar={'\u2000'}
+    />
+  );
+};
 
 const ModalContainer = posed.div({
   enter: {
@@ -41,6 +63,11 @@ const useStyles = makeStyles(theme => ({
     minWidth: '100%',
     boxSizing: 'border-box',
   },
+  formControlRow: {
+    marginBottom: 10,
+    minWidth: '45%',
+    boxSizing: 'border-box',
+  },
   inputs: {
     marginBottom: 10,
     minWidth: '47%',
@@ -50,10 +77,36 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const useStyles1 = makeStyles(theme => ({
+  success: {
+    backgroundColor: 'green',
+  },
+  error: {
+    backgroundColor: theme.palette.error.dark,
+  },
+  message: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+}));
+
+
+const mapStateToProps = state => ({
+  requestCallData: state.requestCallData,
+  courses: state.coursesData.results,
+});
+
+const actionCreators = {
+  requestCall: actions.requestCall,
+};
+
 const Modal = ({
   visible = false,
   buttonText = 'Modal',
   buttonType = 'primary',
+  requestCall,
+  courses,
+  requestCallData,
 }) => {
   const [isVisible, toggleVisible] = useState(visible);
   const [formValues, setFormValues] = React.useState({
@@ -74,8 +127,10 @@ const Modal = ({
       error: false,
     },
   });
+  const [openSnackbar, setOpenSnackbar] = useState(requestCallData.state === 'success' || requestCallData.state === 'failure');
 
   const classes = useStyles();
+  const classes1 = useStyles1();
 
   useEffect(() => {
     if (isVisible) {
@@ -100,16 +155,49 @@ const Modal = ({
     setFormValues({
       ...formValues,
       [name]: {
-        ...formValues[name],
+        error: false,
         value: e.target.value,
       },
     });
   };
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
-    console.log(formValues);
+    if (formValues.course.value === '') {
+      return setFormValues({
+        ...formValues,
+        course: {
+          ...formValues.course,
+          error: true,
+        },
+      });
+    }
+
+    if (formValues.name.value === '') {
+      return setFormValues({
+        ...formValues,
+        name: {
+          ...formValues.name,
+          error: true,
+        },
+      });
+    }
+    if (formValues.phone.value === '') {
+      return setFormValues({
+        ...formValues,
+        phone: {
+          ...formValues.phone,
+          error: true,
+        },
+      });
+    }
+    await requestCall(formValues);
+    setOpenSnackbar(true);
   };
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  }
 
   return (
     <div>
@@ -129,7 +217,7 @@ const Modal = ({
                   <div className="ep-modal-body">
                     <form ref={formRef} onSubmit={submitForm}>
                       <FormControl className={classes.formControl} error={formValues.course.error}>
-                        <InputLabel htmlFor="select-course">Выберите курс</InputLabel>
+                        <InputLabel htmlFor="select-course">Выберите курс*</InputLabel>
                         <Select
                           value={formValues.course.value}
                           onChange={handleChange('course')}
@@ -138,31 +226,40 @@ const Modal = ({
                             id: 'select-course',
                           }}
                         >
-                          <MenuItem value="html-begginer">«Введение в верстку»</MenuItem>
-                          <MenuItem value="html-pro">«Продвинутая верстка»</MenuItem>
-                          <MenuItem value="js-begginer">«Введение в программирование»</MenuItem>
-                          <MenuItem value="js-pro">«Продвинутое программирование»</MenuItem>
-                          <MenuItem value="react">«React»</MenuItem>
+                          {courses.map(course => (
+                            <MenuItem value={course.id} key={course.id}>«{course.name}»</MenuItem>
+                          ))}
                         </Select>
                         {formValues.course.error ? <FormHelperText>Выберите курс!</FormHelperText> : null}
                       </FormControl>
                       <div className="ep-form-group">
-                        <TextField
-                          id="username"
-                          label="Имя"
-                          className={classes.inputs}
-                          value={formValues.name.value}
-                          onChange={handleChange('name')}
-                          margin="normal"
-                        />
-                        <TextField
-                          id="phone"
-                          label="Номер телефона"
-                          className={classes.inputs}
-                          value={formValues.phone.value}
-                          onChange={handleChange('phone')}
-                          margin="normal"
-                        />
+                        <FormControl className={classes.formControlRow}>
+                          <TextField
+                            id="username"
+                            label="Имя"
+                            className={classes.inputs}
+                            error={formValues.name.error}
+                            value={formValues.name.value}
+                            onChange={handleChange('name')}
+                            margin="normal"
+                          />
+                          {formValues.name.error ? <FormHelperText error={formValues.name.error}>Введите имя!</FormHelperText> : null}
+                        </FormControl>
+                        <FormControl className={classes.formControlRow}>
+                          <TextField
+                            id="phone"
+                            label="Номер телефона*"
+                            className={classes.inputs}
+                            error={formValues.phone.error}
+                            value={formValues.phone.value}
+                            onChange={handleChange('phone')}
+                            margin="normal"
+                            InputProps={{
+                              inputComponent: TextMaskCustom,
+                            }}
+                          />
+                          {formValues.phone.error ? <FormHelperText error={formValues.phone.error}>Введите номер телефона!</FormHelperText> : null}
+                        </FormControl>
                       </div>
                       <div className="ep-form-group">
                         <TextField
@@ -177,10 +274,32 @@ const Modal = ({
                         />
                       </div>
                       <div className="ep-form-group" style={{ marginTop: 30 }}>
-                        <Button type="primary-inverse" htmlType="submit" fullSize={true}>Оставить заявку</Button>
+                        <Button type="primary-inverse" htmlType="submit" fullSize={true} disabled={requestCallData.state === 'request'}>
+                          {
+                            requestCallData.state === 'request'
+                              ? <FontAwesomeIcon icon="spinner"/>
+                              : 'Оставить заявку'
+                          }
+                        </Button>
                       </div>
                     </form>
                   </div>
+                <Snackbar
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                  }}
+                  open={openSnackbar}
+                  onClose={handleCloseSnackbar}
+                  autoHideDuration={4000}
+                >
+                  <SnackbarContent
+                    className={requestCallData.state === 'success' ? classes1.success : classes1.error}
+                    message={
+                      <span id="message-id">{requestCallData.state === 'success' ? 'Заявка отправлена' : 'Не удалось отправить заявку'}</span>
+                    }
+                  />
+                </Snackbar>
               </ModalContainer>,
           ]
           : null
@@ -191,4 +310,4 @@ const Modal = ({
   );
 };
 
-export default Modal;
+export default connect(mapStateToProps, actionCreators)(Modal);

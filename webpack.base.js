@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 module.exports = {
   stats: {
@@ -9,6 +10,11 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  plugins: [
+    new MomentLocalesPlugin({
+      localesToKeep: ['ru'],
+    }),
+  ],
   module: {
     rules: [
       {

@@ -24,7 +24,7 @@ const CourseCard = ({
     <Container className="p-0">
       <Row className="align-items-center flex-nowrap" noGutters={true}>
         <Col xs={0} lg="auto" xl="auto" className="text-center d-none d-lg-block" style={{ width: '23%' }}>
-          <img src={img} className="course-card-image" />
+          <img src={img} className="course-card-image w-100" />
         </Col>
         <Col xs={12} lg="auto" xl="auto" className="border-left" style={{ width: '77%' }}>
           <div className="course-card-info">

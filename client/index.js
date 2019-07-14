@@ -16,6 +16,7 @@ import {
   faPhone,
   faEnvelope,
   faExternalLinkAlt,
+  faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import '@babel/polyfill';
@@ -35,7 +36,6 @@ import './assets/img/favicons/mstile-150x150.png';
 import './assets/img/favicons/safari-pinned-tab.svg';
 import './assets/img/favicons/favicon.ico';
 
-
 library.add(
   faFacebookF,
   faInstagram,
@@ -51,6 +51,7 @@ library.add(
   faEnvelope,
   faClock,
   faExternalLinkAlt,
+  faSpinner,
 );
 
 const store = createStore(window.STORE_DATA, window);

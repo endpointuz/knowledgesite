@@ -44,6 +44,18 @@
         -moz-border-radius: 20%;
         border-radius: 190px;
       }
+      &:disabled {
+        background-color: transparent;
+        border: 1px solid lighten(#FFB15B, 15%);
+        color: lighten(#FFB15B, 15%);
+        cursor: wait;
+        &:hover {
+          background-color: transparent;
+          border: 1px solid lighten(#FFB15B, 15%);
+          color: lighten(#FFB15B, 15%);
+          cursor: wait;
+        }
+      }
       &:hover {
         background-color: transparent;
         border: 1px solid #FFB15B;

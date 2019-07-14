@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import FooterMain from '../components/FooterMain';
 import HeaderMenu from '../components/HeaderMenu';
@@ -28,6 +29,19 @@ class Contacts extends React.Component {
   render() {
     return (
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
+        <Helmet>
+          <title>Контакты | Knowledge</title>
+          <meta name="description" content="Контактная страница сайта knowledge.uz. Учебные курсы от профессиональной команды разработчиков в Ташкент" />
+          <meta name="keywords" content="учебные курсы в Ташкент, программирование, веб-технологии, проекты, учебный центр, создание сайтов" />
+
+          <meta property="og:type" content="article" />
+          <meta property="og:site_name" content="Knowledge.uz" />
+          <meta property="og:title" content="Knowledge.uz | Лучшие курсы программирования в Ташкенте" />
+          <meta property="og:description" content="Мы расскажем, покажем и научим тебя провильному порграммированию и дадим возможность стажироваться!" />
+          <meta property="og:url" content="https://knowledge.uz" />
+          <meta property="og:image" content="http://94.158.52.41:8888/media/girl-big_vNDgE7v.png" />
+          <meta property="og:locale" content="ru_RU" />
+        </Helmet>
         <header className="header with-padding" key={this.props.key}>
           <div className="header-top">
             <HeaderMenu />
