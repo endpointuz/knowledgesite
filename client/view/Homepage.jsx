@@ -63,7 +63,7 @@ class Homepage extends React.Component {
           <meta property="og:type" content="article" />
           <meta property="og:site_name" content="Knowledge.uz" />
           <meta property="og:title" content="Knowledge.uz | Лучшие курсы программирования в Ташкенте" />
-          <meta property="og:description" content="Мы расскажем, покажем и научим тебя провильному порграммированию и дадим возможность стажироваться!" />
+          <meta property="og:description" content="Мы расскажем, покажем и научим тебя правильному программированию и дадим возможность стажироваться!" />
           <meta property="og:url" content="https://knowledge.uz" />
           <meta property="og:image" content={`https://knowledge.uz${sharePic}`} />
           <meta property="og:locale" content="ru_RU" />

@@ -7,15 +7,9 @@ import share from '../../assets/img/share.svg';
 const PosedDiv = posed.div({
   enter: {
     width: 'auto',
-    applyAtStart: {
-      display: 'flex',
-    },
   },
   exit: {
     width: 0,
-    applyAtEnd: {
-      display: 'none',
-    },
   },
 });
 
@@ -35,26 +29,33 @@ const ShareButton = (
         {
           isVisible
             ? <FontAwesomeIcon icon="times" style={{ color: '#999' }} />
-            : <img src={share} alt="" />
+            : <FontAwesomeIcon icon={['far', 'share-square']} />
         }
       </a>
-      <PosedDiv className="share-links" pose={isVisible ? 'enter' : 'exit'}>
-        <a target="_blank"
-           rel="noopener noreferrer"
-           href={`https://www.facebook.com/sharer/sharer.php?u=https://knowledge.uz${shareTo}/`}
-           className="share-link fb"
-        >
-          <FontAwesomeIcon icon={['fab', 'facebook-f']} />
-        </a>
-        <a target="_blank"
-           rel="noopener noreferrer"
-           href={`tg://msg_url?url=https://knowledge.uz${shareTo}/`}
-           className="share-link tg">
-          <FontAwesomeIcon icon={['fab', 'telegram-plane']} />
-        </a>
-      </PosedDiv>
+      <PoseGroup>
+        {
+          isVisible
+            ?
+              <PosedDiv key="first" className="share-links">
+                <a target="_blank"
+                   rel="noopener noreferrer"
+                   href={`https://www.facebook.com/sharer/sharer.php?u=https://knowledge.uz${shareTo}/`}
+                   className="share-link fb"
+                >
+                  <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+                </a>
+                <a target="_blank"
+                   rel="noopener noreferrer"
+                   href={`tg://msg_url?url=https://knowledge.uz${shareTo}/`}
+                   className="share-link tg">
+                  <FontAwesomeIcon icon={['fab', 'telegram-plane']} />
+                </a>
+              </PosedDiv>
+          : null
+        }
+      </PoseGroup>
     </div>
-  )
+  );
 };
 
 export default withRouter(ShareButton);

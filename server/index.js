@@ -15,7 +15,7 @@ import {
   faExternalLinkAlt,
   faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
-import { faClock } from '@fortawesome/free-regular-svg-icons';
+import { faClock, faShareSquare } from '@fortawesome/free-regular-svg-icons';
 import '@babel/polyfill';
 import renderer from './renderer';
 import createStore from '../utils/createStore';
@@ -46,6 +46,7 @@ library.add(
   faClock,
   faExternalLinkAlt,
   faSpinner,
+  faShareSquare,
 );
 
 const app = express();
