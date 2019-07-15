@@ -7,7 +7,7 @@ import smallFooterLogo from '../assets/img/small-footer-logo.png';
 const CompanyDetails = () => (
   <div className="footer-details text-center text-md-left">
     <a href="/"><img src={smallLogo} alt=""/></a>
-    <p className="footer-addr text-left">г. Ташкент, Мирзо-Улугбекскийр-н, ул. Аккурган 1 пр-д, д. 60</p>
+    <p className="footer-addr text-left">г. Ташкент, Мирзо-Улугбекский р-н, ул. Аккурган 1 пр-д, д. 60</p>
     <p className="footer-email text-left"><a href="mailto:knowledge@endpoint.uz" className="footer-email-link">knowledge@endpoint.uz</a></p>
   </div>
 );
@@ -15,7 +15,7 @@ const CompanyDetails = () => (
 const CompanySocials = () => (
   <div className="footer-socials">
     <p className="footer-number">
-      <a href="tel:+998977543210" className="footer-number-link">+998 97 754-32-10</a>
+      <a href="tel:+998903530048" className="footer-number-link">+998 90 353-00-48</a>
       <span className="footer-socials-title">По всем вопросам</span>
     </p>
     <div className="footer-socials-container">

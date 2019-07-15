@@ -12,7 +12,7 @@ const CiteMain = () => (
             <HeaderTitle
               level="3"
               titleType="h3"
-              style={{ lineHeight: '45px', width: '80%' }}
+              style={{ lineHeight: '45px', width: '80%', color: '#fff' }}
             >
               Курсы от профессиональной команды разработчиков
             </HeaderTitle>

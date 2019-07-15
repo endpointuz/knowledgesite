@@ -11,6 +11,7 @@
     }
   }
   &-image {
+    width: 100%;
     @media (min-width: 0) and (max-width: 576px) {
       width: 100%;
     }

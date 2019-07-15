@@ -11,7 +11,6 @@ const Content = pose.div({
 const Accordion = ({
   blocks = [],
 }) => {
-  // const { title, description } = blocks;
   const [visibleBlocks, setVisibleBlock] = useState([]);
 
   const handleTitleClick = (e) => {
@@ -36,10 +35,10 @@ const Accordion = ({
             <Container>
               <Row noGutters={true} className="align-items-center flex-nowrap flex-lg-wrap">
                 <Col xs="auto" xl="auto">
-                  <div className="accordion-title-num">{i + 1}</div>
+                  <div className={`accordion-title-num${isVisible(String(el.id)) ? ' t-bold' : ''}`}>{i + 1}</div>
                 </Col>
                 <Col xs={10} xl="auto" className="px-4">
-                  <div className="accordion-title-name">{el.name}</div>
+                  <div className={`accordion-title-name${isVisible(String(el.id)) ? ' t-bold' : ''}`}>{el.name}</div>
                 </Col>
                 <Col xs="auto" xl="auto" className="ml-auto">
                   <div className="accordion-title-icon">

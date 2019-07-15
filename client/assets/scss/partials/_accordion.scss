@@ -6,6 +6,10 @@
     color: #51556E;
     padding: 21px 20px;
     border: 1px solid #EDEDF0;
+    &:hover .accordion-title-name,
+    &:hover .accordion-title-num {
+      color: #FFB15B;
+    }
     @media (min-width: 0) and (max-width: 576px) {
       font-size: 18px;
       padding: 15px 10px;
@@ -19,8 +23,14 @@
     overflow: hidden;
     border-left: 1px solid #EDEDF0;
     border-right: 1px solid #EDEDF0;
+    background-color: #fff;
     &-wrapper {
       padding: 15px 40px;
+      width: 80%;
     }
+  }
+  .t-bold {
+    font-weight: 700;
+    color: #FFB15B;
   }
 }

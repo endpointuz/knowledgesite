@@ -6,21 +6,6 @@
       width: 100%;
     }
   }
-  .share-button {
-    display: block;
-    position: absolute;
-    right: 40px;
-    top: 40px;
-    @media (min-width: 0) and (max-width: 576px) {
-      right: 20px;
-    }
-    @media (min-width: 577px) and (max-width: 768px) {
-      right: 20px;
-    }
-    @media (min-width: 769px) and (max-width: 991px) {
-      right: 20px;
-    }
-  }
   .mx-10px {
     margin-right: 10px;
     margin-left: 29px;

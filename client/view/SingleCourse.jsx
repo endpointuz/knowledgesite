@@ -43,6 +43,12 @@ class SingleCourse extends React.Component {
   }
 
   componentWillUnmount() {
+    if (this.timerHandle) {
+      clearTimeout(this.timerHandle);
+      this.timerHandle = 0;
+      clearTimeout(this.timerHandle2);
+      this.timerHandle2 = 0;
+    }
     document.querySelector('.loader').classList.remove('loaded');
     document.querySelector('.loader-circle').classList.remove('loaded');
   }

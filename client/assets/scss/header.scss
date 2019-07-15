@@ -143,8 +143,9 @@
     height: 440px;
     padding-top: 30px;
     &-course {
-      height: 590px;
+      min-height: 590px;
       padding-top: 30px;
+      padding-bottom: 30px;
       h2.etitle.etitle-1 {
         @media (min-width: 0) and (max-width: 576px) {
           font-size: 24px;
@@ -185,16 +186,20 @@
         }
       }
       @media (min-width: 0) and (max-width: 575px) {
-        height: 800px;
+        min-height: 800px;
+        padding-bottom: 20px;
       }
       @media (min-width: 576px) and (max-width: 767px) {
-        height: 934px;
+        min-height: 934px;
+        padding-bottom: 20px;
       }
       @media (min-width: 768px) and (max-width: 991px) {
-        height: 890px;
+        min-height: 890px;
+        padding-bottom: 30px;
       }
       @media (min-width: 992px) and (max-width: 1199px) {
-        height: 810px;
+        min-height: 810px;
+        padding-bottom: 30px;
       }
     }
     @media (min-width: 0) and (max-width: 576px) {

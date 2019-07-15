@@ -2,11 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
+import ShareButton from '../components/ep-components/ShareButton';
+
 import timeIcon from '../assets/img/time.svg';
 import calendar from '../assets/img/calendar.svg';
 import start from '../assets/img/start.svg';
 import rarr from '../assets/img/rarr.svg';
-import share from '../assets/img/share.svg';
+
 
 const CourseCard = ({
   img,
@@ -18,9 +20,9 @@ const CourseCard = ({
   link,
 }) => (
   <div className="course-card">
-    <a href="/" className="share-button">
-      <img src={share} alt="" />
-    </a>
+    <ShareButton
+      shareTo={link}
+    />
     <Container className="p-0">
       <Row className="align-items-center flex-nowrap" noGutters={true}>
         <Col xs={0} lg="auto" xl="auto" className="text-center d-none d-lg-block" style={{ width: '23%' }}>

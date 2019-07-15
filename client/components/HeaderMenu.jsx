@@ -70,7 +70,7 @@ const HeaderMenu = () => {
                     </Col>
                     <Col xs={12} xl={4}>
                       <HeaderPhone
-                        number="+998 97 754-32-10"
+                        number="+998 90 353-00-48"
                         label="По всем вопросам"
                       />
                     </Col>

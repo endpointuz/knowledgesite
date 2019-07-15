@@ -1,0 +1,57 @@
+.share {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: absolute;
+  right: 40px;
+  top: 25px;
+  z-index: 2;
+  @media (min-width: 0) and (max-width: 576px) {
+    top: 5px;
+    right: 20px;
+  }
+  @media (min-width: 577px) and (max-width: 768px) {
+    right: 20px;
+  }
+  @media (min-width: 769px) and (max-width: 991px) {
+    right: 20px;
+  }
+
+  &-button {
+    color: #FFB15B;
+    font-size: 20px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    &:focus {
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  &-links {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  &-link {
+    color: #FFB15B;
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    &.fb:hover {
+      color: #3b5998;
+    }
+    &.tg:hover {
+      color: #0088cc;
+    }
+    &:first-child {
+      padding-left: 20px;
+    }
+  }
+}

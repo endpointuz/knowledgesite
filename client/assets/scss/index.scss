@@ -8,6 +8,7 @@
 @import "partials/modal";
 @import "partials/contactCard";
 @import "partials/pagination";
+@import "partials/shareButton";
 @import "header";
 @import "courseCard";
 @import "course";
@@ -174,7 +175,7 @@ a.more {
   color: #51556E;
   font-size: 18px;
   font-weight: 300;
-  line-height: 24px;
+  line-height: 30px;
   text-align: center;
   margin-top: 24px;
 }

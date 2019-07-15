@@ -17,12 +17,12 @@ const TeacherOneCourseMain = ({ teachers = [] }) => {
             <TeacherCard
               img={teacher.photo}
               title={teacher.name}
-              description={teacher.description}
+              description={teacher.position}
             />
           </Col>
           <Col xl={6}>
             <div className="teacher-description">
-              {teacher.position.split('/br/').map((text, index) => (
+              {teacher.description.split('/br/').map((text, index) => (
                 <p className="teacher-description-text" key={index}>
                   {text}
                 </p>

@@ -7,7 +7,7 @@ import FooterMain from '../components/FooterMain';
 import HeaderMenu from '../components/HeaderMenu';
 import ContactsMain from '../components/ContactsMain';
 
-import notFoundPic from '../assets/img/404.png';
+import notFoundPic from '../assets/img/404.svg';
 import arrowIcon from '../assets/img/arrow.svg';
 
 class NotFound extends React.Component {
@@ -16,17 +16,23 @@ class NotFound extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
+    this.timerHandle = setTimeout(() => {
       this.setState({ visible: true });
       document.querySelector('.loader').classList.add('loaded');
       // document.querySelector('.loader-circle').classList.add('loaded');
     }, 1500);
-    setTimeout(() => {
+    this.timerHandle2 = setTimeout(() => {
       document.querySelector('.loader-circle').classList.add('loaded');
     }, 1000);
   }
 
   componentWillUnmount() {
+    if (this.timerHandle) {
+      clearTimeout(this.timerHandle);
+      this.timerHandle = 0;
+      clearTimeout(this.timerHandle2);
+      this.timerHandle2 = 0;
+    }
     document.querySelector('.loader').classList.remove('loaded');
     document.querySelector('.loader-circle').classList.remove('loaded');
   }
@@ -54,6 +60,11 @@ class NotFound extends React.Component {
                 <p className="notfound-text">
                   Страница, которую ты ищешь, не существует
                 </p>
+              </Col>
+            </Row>
+            <Row className="notfound-row">
+              <Col className="notfound-col" lg={6}>
+                <Link to="/" className="notfound-link">Вернуться на главную</Link>
               </Col>
             </Row>
           </Container>
