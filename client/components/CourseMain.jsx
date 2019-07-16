@@ -33,7 +33,7 @@ const CourseMain = (
               description={course.description}
               totalLessons={course.duration}
               period={course.period}
-              startAt={moment(course.started_at).format('D MMMM')}
+              startAt={moment(course.started_at).format('MMMM')}
               link={`/courses/${course.slug}`}
             />
           </Col>

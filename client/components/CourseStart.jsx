@@ -16,7 +16,7 @@ const CourseStart = ({
         <Col lg={8} xl={8}>
           <div className="header-main-slogan">
             <p className="start-course-title">
-              <span className="d-block">Дата старта <span className="important">{moment(startDate).format('D MMMM')}</span></span>
+              <span className="d-block">Дата старта ~ <span className="important">{moment(startDate).format('MMMM')}</span></span>
               <span className="d-block">Стоимость за весь курс <span className="important">{price}</span> сумов</span>
             </p>
             <div style={{ textAlign: 'center', marginTop: 20 }}>

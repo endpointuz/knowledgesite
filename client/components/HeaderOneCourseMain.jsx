@@ -86,7 +86,7 @@ const HeaderOneCourseMain = ({
                   <img src={start} />
                 </Col>
                 <Col xs="auto" xl="12">
-                  <p className="data">{moment(startAt).format('D MMMM')}</p>
+                  <p className="data">{moment(startAt).format('MMMM')}</p>
                   <p className="title">старт</p>
                 </Col>
               </Row>
