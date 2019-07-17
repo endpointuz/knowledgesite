@@ -25,7 +25,7 @@ const HeaderOneCourseMain = ({
     <Container className="p-0">
       <Row noGutters={true} className="marginBottom">
         <Col xl={8}>
-          <div className="header-main-slogan p-0">
+          <div className="header-main-slogan">
             <HeaderTitle center={false} titleType="h2" level="2" style={{ marginBottom: 15 }}>
               Курс
             </HeaderTitle>
