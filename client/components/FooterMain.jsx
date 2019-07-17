@@ -20,13 +20,13 @@ const CompanySocials = () => (
     </p>
     <div className="footer-socials-container">
       <div className="footer-socials-buttons">
-        <a href="/" className="ep-btn-social" style={{ marginRight: 20 }}>
+        <a href="https://t.me/knowledge_uz" className="ep-btn-social" style={{ marginRight: 20 }}>
           <FontAwesomeIcon icon={['fab', 'telegram-plane']} />
         </a>
-        <a href="/" className="ep-btn-social" style={{ marginRight: 20 }}>
+        <a href="https://www.instagram.com/knowledge.uz/" className="ep-btn-social" style={{ marginRight: 20 }}>
           <FontAwesomeIcon icon={['fab', 'instagram']} />
         </a>
-        <a href="/" className="ep-btn-social">
+        <a href="https://www.facebook.com/knowledge.uz/" className="ep-btn-social">
           <FontAwesomeIcon icon={['fab', 'facebook-f']} />
         </a>
       </div>
