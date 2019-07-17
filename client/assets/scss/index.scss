@@ -178,6 +178,9 @@ a.more {
   line-height: 30px;
   text-align: center;
   margin-top: 24px;
+  @media (max-width: 576px) {
+    padding: 0 15px;
+  }
 }
 #message-id {
   color: #fff;

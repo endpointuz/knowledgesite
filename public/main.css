@@ -7035,7 +7035,8 @@ a.text-dark:hover, a.text-dark:focus {
   color: #1E266D; }
   @media (min-width: 0) and (max-width: 576px) {
     .etitle-1 {
-      font-size: 34px; } }
+      font-size: 34px;
+      padding: 0 15px; } }
 
 .etitle-2 {
   font-size: 28px;
@@ -8261,6 +8262,10 @@ body.noScroll {
         font-size: 16px;
         margin-right: 10px; }
 
+@media (max-width: 1199px) {
+  .about-us {
+    padding-top: 40px; } }
+
 .about-us-text {
   padding-right: 20px; }
   @media (max-width: 768px) {
@@ -8295,6 +8300,9 @@ body.noScroll {
     @media (max-width: 768px) {
       .about-target-text {
         padding-left: 0; } }
+    @media (max-width: 1199px) {
+      .about-target-text {
+        padding-top: 40px; } }
 
 .notfound {
   background-color: #FFF;
@@ -8488,6 +8496,9 @@ a.more {
   line-height: 30px;
   text-align: center;
   margin-top: 24px; }
+  @media (max-width: 576px) {
+    .esubtitle {
+      padding: 0 15px; } }
 
 #message-id {
   color: #fff; }
