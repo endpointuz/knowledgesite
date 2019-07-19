@@ -43,6 +43,8 @@ const renderer = (req, store) => {
           <link rel="icon" sizes="512x512" href="/img/android-chrome-512x512.png">
           <link rel="stylesheet" href="/main.css" />
           <meta name="mailru-domain" content="vSlwJnaL3xoGZwxr" />
+          <meta name="yandex-verification" content="69167ef94ccd91b6" />
+          <meta name="google-site-verification" content="RnzsoONBawJHhfHR2juhyAbaJ8mVkouLkSaJXUySGfk" />
           <!-- Yandex.Metrika counter -->
           <script type="text/javascript" >
              (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
