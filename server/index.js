@@ -1,6 +1,7 @@
 import express from 'express';
 import { matchRoutes } from 'react-router-config';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import sm from 'sitemap';
 import { faFacebookF, faInstagram, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
 import {
   faBars,
@@ -49,13 +50,34 @@ library.add(
   faShareSquare,
 );
 
+const sitemap = sm.createSitemap({
+  hostname: 'https://knowledge.uz',
+  cacheTime: 600000,
+  urls: [
+    { url: '/', changefreq: 'monthly', priority: 1.0 },
+    { url: '/about/', changefreq: 'monthly', priority: 1.0 },
+    { url: '/contacts/', changefreq: 'monthly', priority: 1.0 },
+    { url: '/courses/', changefreq: 'monthly', priority: 1.0 },
+    { url: '/courses/vvedenie-v-verstku/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/courses/prodvinutaya-verstka-bootstrap-4/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/courses/osnovy-programmirovaniya/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/courses/react/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/courses/prodvinutoe-programmirovanie/', changefreq: 'monthly', priority: 0.8 },
+  ],
+});
+
 const app = express();
 
 app.use(express.static('public'));
 
+app.get('/sitemap.xml', (req, res) => {
+  res.header('Content-Type', 'application/xml');
+  res.send(sitemap.toString());
+});
+
 app.get('/robots.txt', (req, res) => {
   res.type('text/plain');
-  res.send('User-agent: *\nDisallow: /');
+  res.send('User-agent: *\nAllow: /');
 });
 
 app.get('*', (req, res) => {
