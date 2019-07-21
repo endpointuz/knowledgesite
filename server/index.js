@@ -63,6 +63,7 @@ const sitemap = sm.createSitemap({
     { url: '/courses/osnovy-programmirovaniya/', changefreq: 'monthly', priority: 0.8 },
     { url: '/courses/react/', changefreq: 'monthly', priority: 0.8 },
     { url: '/courses/prodvinutoe-programmirovanie/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/courses/kak-nachat-kareru-programmista-s/', changefreq: 'monthly', priority: 0.8 },
   ],
 });
 
