@@ -18,6 +18,7 @@ const mapStateToProps = state => ({
 
 const actionCreators = {
   getCourseDetail: actions.getCourseDetail,
+  getCourses: actions.getCourses,
 };
 
 @connect(mapStateToProps, actionCreators)
@@ -28,7 +29,8 @@ class SingleCourse extends React.Component {
   }
 
   componentDidMount() {
-    const { getCourseDetail, location } = this.props;
+    const { getCourseDetail, getCourses, location } = this.props;
+    getCourses(30);
     const slug = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
     getCourseDetail(slug);
 
