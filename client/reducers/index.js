@@ -76,9 +76,19 @@ const requestCallData = handleActions({
   state: null,
 });
 
+const snackbarVisible = handleActions({
+  [actions.openSnackbar]() {
+    return true;
+  },
+  [actions.closeSnackbar]() {
+    return false;
+  },
+}, false);
+
 export default combineReducers({
   windowData,
   coursesData,
   courseDetail,
   requestCallData,
+  snackbarVisible,
 });

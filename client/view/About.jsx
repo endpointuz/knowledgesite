@@ -11,14 +11,18 @@ import AboutTarget from '../components/AboutTarget';
 import AboutAdvantages from '../components/AboutAdvantages';
 import AppointmentMain from '../components/AppointmentMain';
 import * as actions from '../actions';
+import MySnackbar from '../components/ep-components/Snackbar';
 
 
 const mapStateToProps = state => ({
   coursesData: state.coursesData,
+  requestCallData: state.requestCallData,
+  snackbarVisible: state.snackbarVisible,
 });
 
 const actionCreators = {
   getCourses: actions.getCourses,
+  closeSnackbar: actions.closeSnackbar,
 };
 
 @connect(mapStateToProps, actionCreators)
@@ -52,9 +56,19 @@ class About extends React.Component {
   }
 
   render() {
+    const {
+      requestCallData,
+      snackbarVisible,
+      closeSnackbar,
+    } = this.props;
 
     return (
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
+        <MySnackbar
+          requestCallData={requestCallData}
+          snackbarVisible={snackbarVisible}
+          closeSnackbar={closeSnackbar}
+        />
         <Helmet>
           <title>О проекте | Knowledge</title>
           <meta name="description" content="О проекте knowledge.uz. Учебные курсы от профессиональной команды разработчиков в Ташкент" />

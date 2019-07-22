@@ -6,15 +6,19 @@ import FooterMain from '../components/FooterMain';
 import HeaderContainer from '../containers/HeaderContainer';
 import CourseMain from '../components/CourseMain';
 import * as actions from '../actions';
+import MySnackbar from '../components/ep-components/Snackbar';
 
 
 
 const mapStateToProps = state => ({
   coursesData: state.coursesData,
+  requestCallData: state.requestCallData,
+  snackbarVisible: state.snackbarVisible,
 });
 
 const actionCreators = {
   getCourses: actions.getCourses,
+  closeSnackbar: actions.closeSnackbar,
 };
 
 @connect(mapStateToProps, actionCreators)
@@ -48,9 +52,19 @@ class Courses extends React.Component {
   }
 
   render() {
-    const { coursesData } = this.props;
+    const {
+      coursesData,
+      requestCallData,
+      snackbarVisible,
+      closeSnackbar,
+    } = this.props;
     return (
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
+        <MySnackbar
+          requestCallData={requestCallData}
+          snackbarVisible={snackbarVisible}
+          closeSnackbar={closeSnackbar}
+        />
         <Helmet>
           <title>Все курсы | Knowledge</title>
           <meta name="description" content="Страница всех курсов от профессиональной команды разработчиков endpoint.uz" />

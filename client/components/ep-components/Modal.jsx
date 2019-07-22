@@ -94,10 +94,13 @@ const useStyles1 = makeStyles(theme => ({
 const mapStateToProps = state => ({
   requestCallData: state.requestCallData,
   courses: state.coursesData.results,
+  snackbarVisible: state.snackbarVisible,
 });
 
 const actionCreators = {
   requestCall: actions.requestCall,
+  openSnackbar: actions.openSnackbar,
+  closeSnackbar: actions.closeSnackbar,
 };
 
 const Modal = ({
@@ -107,6 +110,9 @@ const Modal = ({
   requestCall,
   courses,
   requestCallData,
+  snackbarVisible,
+  openSnackbar,
+  closeSnackbar,
 }) => {
   const [isVisible, toggleVisible] = useState(visible);
   const [formValues, setFormValues] = React.useState({
@@ -127,10 +133,8 @@ const Modal = ({
       error: false,
     },
   });
-  const [openSnackbar, setOpenSnackbar] = useState(requestCallData.state === 'success' || requestCallData.state === 'failure');
 
   const classes = useStyles();
-  const classes1 = useStyles1();
 
   useEffect(() => {
     if (isVisible) {
@@ -192,12 +196,9 @@ const Modal = ({
       });
     }
     await requestCall(formValues);
-    setOpenSnackbar(true);
+    toggleVisible(false);
+    openSnackbar();
   };
-
-  const handleCloseSnackbar = () => {
-    setOpenSnackbar(false);
-  }
 
   return (
     <div>
@@ -206,100 +207,84 @@ const Modal = ({
           ? [
               <Shade key="shade" className="ep-modal" />,
               <ModalContainer key="modal" className="ep-modal-container" id="fixed">
-                  <div className="ep-modal-header">
-                    <p className="ep-modal-close">
-                      <a href="" onClick={closeModal}><FontAwesomeIcon icon="times"/></a>
-                    </p>
-                    <h2 className="ep-modal-title">Запись на курсы</h2>
-                    <p className="ep-modal-subtitle">Оставь заявку и наш менеджер расскажет тебе всё про
-                      обучение</p>
-                  </div>
-                  <div className="ep-modal-body">
-                    <form ref={formRef} onSubmit={submitForm}>
-                      <FormControl className={classes.formControl} error={formValues.course.error}>
-                        <InputLabel htmlFor="select-course">Выберите курс*</InputLabel>
-                        <Select
-                          value={formValues.course.value}
-                          onChange={handleChange('course')}
-                          inputProps={{
-                            name: 'course',
-                            id: 'select-course',
-                          }}
-                        >
-                          {courses.map(course => (
-                            <MenuItem value={course.id} key={course.id}>«{course.name}»</MenuItem>
-                          ))}
-                        </Select>
-                        {formValues.course.error ? <FormHelperText>Выберите курс!</FormHelperText> : null}
-                      </FormControl>
-                      <div className="ep-form-group">
-                        <FormControl className={classes.formControlRow}>
-                          <TextField
-                            id="username"
-                            label="Имя"
-                            className={classes.inputs}
-                            error={formValues.name.error}
-                            value={formValues.name.value}
-                            onChange={handleChange('name')}
-                            margin="normal"
-                          />
-                          {formValues.name.error ? <FormHelperText error={formValues.name.error}>Введите имя!</FormHelperText> : null}
-                        </FormControl>
-                        <FormControl className={classes.formControlRow}>
-                          <TextField
-                            id="phone"
-                            label="Номер телефона*"
-                            className={classes.inputs}
-                            error={formValues.phone.error}
-                            value={formValues.phone.value}
-                            onChange={handleChange('phone')}
-                            margin="normal"
-                            InputProps={{
-                              inputComponent: TextMaskCustom,
-                            }}
-                          />
-                          {formValues.phone.error ? <FormHelperText error={formValues.phone.error}>Введите номер телефона!</FormHelperText> : null}
-                        </FormControl>
-                      </div>
-                      <div className="ep-form-group">
+                <div className="ep-modal-header">
+                  <p className="ep-modal-close">
+                    <a href="" onClick={closeModal}><FontAwesomeIcon icon="times"/></a>
+                  </p>
+                  <h2 className="ep-modal-title">Запись на курсы</h2>
+                  <p className="ep-modal-subtitle">Оставь заявку и наш менеджер расскажет тебе всё про
+                    обучение</p>
+                </div>
+                <div className="ep-modal-body">
+                  <form ref={formRef} onSubmit={submitForm}>
+                    <FormControl className={classes.formControl} error={formValues.course.error}>
+                      <InputLabel htmlFor="select-course">Выберите курс*</InputLabel>
+                      <Select
+                        value={formValues.course.value}
+                        onChange={handleChange('course')}
+                        inputProps={{
+                          name: 'course',
+                          id: 'select-course',
+                        }}
+                      >
+                        {courses.map(course => (
+                          <MenuItem value={course.id} key={course.id}>«{course.name}»</MenuItem>
+                        ))}
+                      </Select>
+                      {formValues.course.error ? <FormHelperText>Выберите курс!</FormHelperText> : null}
+                    </FormControl>
+                    <div className="ep-form-group">
+                      <FormControl className={classes.formControlRow}>
                         <TextField
-                          id="comment"
-                          label="Комментарий"
-                          multiline
-                          rowsMax="4"
-                          className={classes.textarea}
-                          value={formValues.comment.value}
-                          onChange={handleChange('comment')}
+                          id="username"
+                          label="Имя"
+                          className={classes.inputs}
+                          error={formValues.name.error}
+                          value={formValues.name.value}
+                          onChange={handleChange('name')}
                           margin="normal"
                         />
-                      </div>
-                      <div className="ep-form-group" style={{ marginTop: 30 }}>
-                        <Button type="primary-inverse" htmlType="submit" fullSize={true} disabled={requestCallData.state === 'request'}>
-                          {
-                            requestCallData.state === 'request'
-                              ? <FontAwesomeIcon icon="spinner"/>
-                              : 'Оставить заявку'
-                          }
-                        </Button>
-                      </div>
-                    </form>
-                  </div>
-                <Snackbar
-                  anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'center',
-                  }}
-                  open={openSnackbar}
-                  onClose={handleCloseSnackbar}
-                  autoHideDuration={4000}
-                >
-                  <SnackbarContent
-                    className={requestCallData.state === 'success' ? classes1.success : classes1.error}
-                    message={
-                      <span id="message-id">{requestCallData.state === 'success' ? 'Заявка отправлена' : 'Не удалось отправить заявку'}</span>
-                    }
-                  />
-                </Snackbar>
+                        {formValues.name.error ? <FormHelperText error={formValues.name.error}>Введите имя!</FormHelperText> : null}
+                      </FormControl>
+                      <FormControl className={classes.formControlRow}>
+                        <TextField
+                          id="phone"
+                          label="Номер телефона*"
+                          className={classes.inputs}
+                          error={formValues.phone.error}
+                          value={formValues.phone.value}
+                          onChange={handleChange('phone')}
+                          margin="normal"
+                          InputProps={{
+                            inputComponent: TextMaskCustom,
+                          }}
+                        />
+                        {formValues.phone.error ? <FormHelperText error={formValues.phone.error}>Введите номер телефона!</FormHelperText> : null}
+                      </FormControl>
+                    </div>
+                    <div className="ep-form-group">
+                      <TextField
+                        id="comment"
+                        label="Комментарий"
+                        multiline
+                        rowsMax="4"
+                        className={classes.textarea}
+                        value={formValues.comment.value}
+                        onChange={handleChange('comment')}
+                        margin="normal"
+                      />
+                    </div>
+                    <div className="ep-form-group" style={{ marginTop: 30 }}>
+                      <Button type="primary-inverse" htmlType="submit" fullSize={true} disabled={requestCallData.state === 'request'}>
+                        {
+                          requestCallData.state === 'request'
+                            ? <FontAwesomeIcon icon="spinner"/>
+                            : 'Оставить заявку'
+                        }
+                      </Button>
+                    </div>
+                  </form>
+                </div>
               </ModalContainer>,
           ]
           : null

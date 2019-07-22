@@ -10,15 +10,19 @@ import ProgramOneCourseContainer from '../containers/ProgramOneCourseContainer';
 import TeacherOneCourseContainer from '../containers/TeacherOneCourseContainer';
 import AppointmentOneCourseContainer from '../containers/AppointmentOneCourseContainer';
 import NotFound from './NotFound';
+import MySnackbar from '../components/ep-components/Snackbar';
 import * as actions from '../actions';
 
 const mapStateToProps = state => ({
   courseDetail: state.courseDetail,
+  requestCallData: state.requestCallData,
+  snackbarVisible: state.snackbarVisible,
 });
 
 const actionCreators = {
   getCourseDetail: actions.getCourseDetail,
   getCourses: actions.getCourses,
+  closeSnackbar: actions.closeSnackbar,
 };
 
 @connect(mapStateToProps, actionCreators)
@@ -56,7 +60,12 @@ class SingleCourse extends React.Component {
   }
 
   render() {
-    const { courseDetail } = this.props;
+    const {
+      courseDetail,
+      requestCallData,
+      snackbarVisible,
+      closeSnackbar,
+    } = this.props;
 
     return courseDetail.statusCode !== 404
       ? (
@@ -77,6 +86,11 @@ class SingleCourse extends React.Component {
                 </Helmet>
               : null
           }
+          <MySnackbar
+            requestCallData={requestCallData}
+            snackbarVisible={snackbarVisible}
+            closeSnackbar={closeSnackbar}
+          />
           <HeaderOneCourseContainer
             startAt={courseDetail.started_at}
             totalLessons={courseDetail.duration}

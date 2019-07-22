@@ -8,16 +8,20 @@ import CiteMain from '../components/CiteMain';
 import AppointmentMain from '../components/AppointmentMain';
 import FooterMain from '../components/FooterMain';
 import HeaderContainer from '../containers/HeaderContainer';
+import MySnackbar from '../components/ep-components/Snackbar';
 import * as actions from '../actions';
 
 import sharePic from '../assets/img/share.jpg';
 
 const mapStateToProps = state => ({
   coursesData: state.coursesData,
+  requestCallData: state.requestCallData,
+  snackbarVisible: state.snackbarVisible,
 });
 
 const actionCreators = {
   getCourses: actions.getCourses,
+  closeSnackbar: actions.closeSnackbar,
 };
 
 @connect(mapStateToProps, actionCreators)
@@ -51,7 +55,12 @@ class Homepage extends React.Component {
   }
 
   render() {
-    const { coursesData } = this.props;
+    const {
+      coursesData,
+      requestCallData,
+      snackbarVisible,
+      closeSnackbar,
+    } = this.props;
 
     return (
       <>
@@ -69,6 +78,11 @@ class Homepage extends React.Component {
           <meta property="og:locale" content="ru_RU" />
         </Helmet>
         <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
+          <MySnackbar
+            requestCallData={requestCallData}
+            snackbarVisible={snackbarVisible}
+            closeSnackbar={closeSnackbar}
+          />
           <HeaderContainer />
           <div className="course">
             <CourseMain

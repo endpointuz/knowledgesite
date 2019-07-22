@@ -5,6 +5,9 @@ import routes from '../apiRoutes';
 export const setOffsetY = createAction('OFFSET_Y_SET');
 export const setVisibilityMenu = createAction('VISIBILITY_MENU_SET');
 
+export const openSnackbar = createAction('SNACKBAR_OPEN');
+export const closeSnackbar = createAction('SNACKBAR_CLOSE');
+
 export const getCoursesRequest = createAction('COURSES_GET_REQUEST');
 export const getCoursesSuccess = createAction('COURSES_GET_SUCCESS');
 export const getCoursesFailure = createAction('COURSES_GET_FAILURE');

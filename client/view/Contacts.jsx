@@ -1,10 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
 
 import FooterMain from '../components/FooterMain';
 import HeaderMenu from '../components/HeaderMenu';
 import ContactsMain from '../components/ContactsMain';
+import MySnackbar from '../components/ep-components/Snackbar';
+import * as actions from '../actions';
 
+
+const mapStateToProps = state => ({
+  requestCallData: state.requestCallData,
+  snackbarVisible: state.snackbarVisible,
+});
+
+const actionCreators = {
+  closeSnackbar: actions.closeSnackbar,
+};
+
+
+@connect(mapStateToProps, actionCreators)
 class Contacts extends React.Component {
   state = {
     visible: false,
@@ -33,8 +48,19 @@ class Contacts extends React.Component {
   }
 
   render() {
+    const {
+      requestCallData,
+      snackbarVisible,
+      closeSnackbar,
+    } = this.props;
+
     return (
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
+        <MySnackbar
+          requestCallData={requestCallData}
+          snackbarVisible={snackbarVisible}
+          closeSnackbar={closeSnackbar}
+        />
         <Helmet>
           <title>Контакты | Knowledge</title>
           <meta name="description" content="Контактная страница сайта knowledge.uz. Учебные курсы от профессиональной команды разработчиков в Ташкент" />
