@@ -20,6 +20,7 @@ const HeaderOneCourseMain = ({
   title,
   description,
   courseImage,
+  courses,
 }) => (
   <div className="header-main-course">
     <Container className="p-0">
@@ -39,6 +40,7 @@ const HeaderOneCourseMain = ({
               <Modal
                 buttonType="primary"
                 buttonText="Записаться сейчас"
+                courses={courses}
               />
             </div>
           </div>

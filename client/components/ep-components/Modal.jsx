@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import posed, { PoseGroup } from 'react-pose';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -7,12 +8,11 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
-import Snackbar from '@material-ui/core/Snackbar';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-import validator from 'validator';
 import MaskedInput from 'react-text-mask';
+
+import { last } from 'lodash';
 
 import * as actions from '../../actions';
 
@@ -99,6 +99,7 @@ const mapStateToProps = state => ({
 
 const actionCreators = {
   requestCall: actions.requestCall,
+  getCourses: actions.getCourses,
   openSnackbar: actions.openSnackbar,
   closeSnackbar: actions.closeSnackbar,
 };
@@ -110,9 +111,8 @@ const Modal = ({
   requestCall,
   courses,
   requestCallData,
-  snackbarVisible,
+  location,
   openSnackbar,
-  closeSnackbar,
 }) => {
   const [isVisible, toggleVisible] = useState(visible);
   const [formValues, setFormValues] = React.useState({
@@ -147,6 +147,21 @@ const Modal = ({
         .remove('noScroll');
     }
   });
+
+  useEffect(() => {
+    const { pathname } = location;
+    const currentSlug = last(pathname.split('/').filter(el => el));
+    const [currentCourse] = courses.filter(course => course.slug === currentSlug);
+    if (currentCourse) {
+      setFormValues({
+        ...formValues,
+        course: {
+          value: currentCourse.id,
+          error: false,
+        },
+      });
+    }
+  }, [courses]);
 
   const closeModal = (e) => {
     e.preventDefault();
@@ -295,4 +310,4 @@ const Modal = ({
   );
 };
 
-export default connect(mapStateToProps, actionCreators)(Modal);
+export default connect(mapStateToProps, actionCreators)(withRouter(Modal));

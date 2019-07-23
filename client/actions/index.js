@@ -20,7 +20,6 @@ export const getCourses = count => async (dispatch) => {
         page_size: count,
       },
     });
-
     dispatch(getCoursesSuccess({ data: response.data }));
   } catch (e) {
     dispatch(getCoursesFailure());

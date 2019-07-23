@@ -15,14 +15,15 @@ import * as actions from '../actions';
 
 const mapStateToProps = state => ({
   courseDetail: state.courseDetail,
+  courses: state.coursesData.results,
   requestCallData: state.requestCallData,
   snackbarVisible: state.snackbarVisible,
 });
 
 const actionCreators = {
   getCourseDetail: actions.getCourseDetail,
-  getCourses: actions.getCourses,
   closeSnackbar: actions.closeSnackbar,
+  getCourses: actions.getCourses,
 };
 
 @connect(mapStateToProps, actionCreators)
@@ -65,6 +66,7 @@ class SingleCourse extends React.Component {
       requestCallData,
       snackbarVisible,
       closeSnackbar,
+      courses,
     } = this.props;
 
     return courseDetail.statusCode !== 404
@@ -99,6 +101,7 @@ class SingleCourse extends React.Component {
             courseImage={courseDetail.picture}
             title={courseDetail.name}
             description={courseDetail.description}
+            courses={courses}
           />
           <OpportunityOneCourseContainer
             opportunity={courseDetail.text_blocks}

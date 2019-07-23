@@ -49,6 +49,4 @@ const MySnackbar = (
   );
 };
 
-
-
 export default MySnackbar;
