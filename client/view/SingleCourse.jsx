@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
+import { last } from 'lodash';
 import FooterMain from '../components/FooterMain';
 import HeaderOneCourseContainer from '../containers/HeaderOneCourseContainer';
 import YougetOneCourseMain from '../components/YougetOneCourseMain';
@@ -36,8 +37,9 @@ class SingleCourse extends React.Component {
   componentDidMount() {
     const { getCourseDetail, getCourses, location } = this.props;
     getCourses(30);
-    const slug = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
-    getCourseDetail(slug);
+    const currentSlug = last(location.pathname.split('/').filter(el => el));
+    // const slug = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
+    getCourseDetail(currentSlug);
 
     setTimeout(() => {
       this.setState({ visible: true });
