@@ -65,8 +65,8 @@ class Homepage extends React.Component {
     return (
       <>
         <Helmet>
-          <title>Главная | Knowledge</title>
-          <meta name="description" content="Главная страница сайта knowledge.uz. Учебные курсы от профессиональной команды разработчиков в Ташкент" />
+          <title>Knowledge — Курсы программирования в Ташкенте. Эффективная программа обучения</title>
+          <meta name="description" content="Учебные курсы от профессиональной команды разработчиков в Ташкенте по направлениям Frontend, Backend, iOS, Android, JavaScript, Python. Результат – портфолио с рабочими проектами на GitHub" />
           <meta name="keywords" content="учебные курсы в Ташкент, программирование, веб-технологии, проекты, учебный центр, создание сайтов" />
 
           <meta property="og:type" content="article" />
