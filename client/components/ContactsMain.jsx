@@ -57,7 +57,7 @@ const ContactsMain = ({
       <Col md={6} lg={6} xl={3}>
         <ContactCard renderIcon={() => (<FontAwesomeIcon icon="envelope" />)} >
           <p className="contact-card-item">
-            knowledge@endpoint.uz
+            info@knowledge.uz
           </p>
         </ContactCard>
       </Col>
