@@ -8,7 +8,7 @@ const CompanyDetails = () => (
   <div className="footer-details text-center text-md-left">
     <a href="/"><img src={smallLogo} alt=""/></a>
     <p className="footer-addr text-left">г. Ташкент, Мирзо-Улугбекский р-н, ул. Аккурган 1 пр-д, д. 60</p>
-    <p className="footer-email text-left"><a href="mailto:knowledge@endpoint.uz" className="footer-email-link">knowledge@endpoint.uz</a></p>
+    <p className="footer-email text-left"><a href="mailto:info@knowledge.uz" className="footer-email-link">info@knowledge.uz</a></p>
   </div>
 );
 
