@@ -50,7 +50,9 @@ const Accordion = ({
           </div>
           <Content className="accordion-description" pose={isVisible(String(el.id)) ? 'open' : 'closed'}>
             <div className="accordion-description-wrapper">
-              {el.description}
+              {el.description.split('<br>').map((string, idx) => (
+                <div key={idx}>{string}</div>
+              ))}
             </div>
           </Content>
         </div>

@@ -104,7 +104,7 @@ const HeaderOneCourseMain = ({
                 </Col>
                 <Col xs="auto" xl="12">
                   <p className="data">{price} сумов</p>
-                  <p className="title">стоимость</p>
+                  <p className="title">стоимость за 1 месяц</p>
                 </Col>
               </Row>
             </Container>
