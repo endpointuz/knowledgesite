@@ -1,17 +1,11 @@
 version: "3"
 services:
   server:
-    build:
-      context: .
-      dockerfile: deploy/Dockerfile
-    volumes:
-      - .:/code
+    image: node:10.16-alpine
     restart: always
-    command: "node build/server.js"
+    volumes:
+      - ./build:/build
+      - ./public:/public
+    command: "node /build/server.js"
     ports:
-      - "9999:3000"
-    networks:
-      - knowledge.uz
-
-networks:
-  knowledge.uz:
+      - "127.0.0.1:3002:3000"
