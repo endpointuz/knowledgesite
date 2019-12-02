@@ -13,7 +13,7 @@ jobs:
       - run: tar -cf build.tar build public
       - run: ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
       - run: scp build.tar $SSH_USER@$SSH_HOST:~/knowledge.uz/knowledge_frontend/
-      - run: ssh $SSH_USER@$SSH_HOST "cd knowledge.uz/knowledge_frontend && tar -xf build.tar && git pull --rebase origin master && docker-compose restart"
+      - run: ssh $SSH_USER@$SSH_HOST "cd knowledge.uz/knowledge_frontend && tar -xf build.tar && git pull --rebase origin master && sleep 2; echo $ROOT_PASS | sudo -sS docker-compose restart"
 
 workflows:
   version: 2
