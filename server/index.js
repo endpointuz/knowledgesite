@@ -92,7 +92,9 @@ app.get('*', (req, res) => {
   Promise.all(promises).then(() => {
     const result = renderer(req, store);
     const { context } = result;
+    console.log('Context: ', context);
     if (context && context.status !== undefined) {
+      console.log('Server response: ', res);
       res.status(context.status);
     }
     res.send(result.jsx);

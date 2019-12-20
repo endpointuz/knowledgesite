@@ -114,7 +114,7 @@ class Homepage extends React.Component {
 
 const loadData = (store, match, cookie) => {
   const actionsToBeDispatched = [];
-  actionsToBeDispatched.push(store.dispatch(actions.getCourses(30)));
+  actionsToBeDispatched.push(store.dispatch(() => actions.getCourses(30)));
 
   return Promise.all(actionsToBeDispatched);
 };

@@ -9,7 +9,6 @@ import * as actions from '../actions';
 import MySnackbar from '../components/ep-components/Snackbar';
 
 
-
 const mapStateToProps = state => ({
   coursesData: state.coursesData,
   requestCallData: state.requestCallData,
