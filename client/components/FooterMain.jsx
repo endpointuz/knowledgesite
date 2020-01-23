@@ -39,6 +39,7 @@ const menuItems = [
   { title: 'О проекте', link: '/about', id: 1 },
   { title: 'Курсы', link: '/courses', id: 4 },
   { title: 'Контакты', link: '/contacts', id: 5 },
+  { title: 'Блог', link: '/blog', id: 6 },
 ];
 
 const CompanyMenu = () => (
@@ -51,7 +52,7 @@ const CompanyMenu = () => (
       ))}
     </ul>
   </div>
-)
+);
 
 const FooterMain = () => (
   <Container className="px-0 pt-0">

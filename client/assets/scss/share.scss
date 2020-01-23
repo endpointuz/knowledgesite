@@ -1,0 +1,17 @@
+.share-article {
+  &-title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &-links {
+    text-align: center;
+    a {
+      margin: 0 15px;
+      color: #1E266D;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.author {
+  display: flex;
+  max-width: 500px;
+  &-photo {
+    width: 30%;
+    @media (max-width: 576px) {
+      width: 45%;
+    }
+    img {
+      width: 100%;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      border-radius: 100%;
+    }
+  }
+
+  &-credits {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px;
+    @media (max-width: 576px) {
+      padding: 0 0 0 15px;
+    }
+  }
+
+  &-name {
+    font-size: 16px;
+    font-weight: 700;
+    @media (max-width: 576px) {
+      font-size: 14px;
+    }
+  }
+  &-position {
+    font-weight: 300;
+    font-style: italic;
+    color: #6c757d;
+    font-size: 14px;
+    @media (max-width: 576px) {
+      font-size: 12px;
+    }
+  }
+}
