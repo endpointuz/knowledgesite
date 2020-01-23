@@ -65,6 +65,7 @@ const HeaderMenu = () => {
                           <Link to="/about" className="elink elink-menu">О проекте</Link>
                           <Link to="/courses" className="elink elink-menu">Курсы</Link>
                           <Link to="/contacts" className="elink elink-menu">Контакты</Link>
+                          <Link to="/blog" className="elink elink-menu">Блог <sup style={{ fontSize: '8px' }}>beta</sup></Link>
                         </HorizontalNavbar>
                       </nav>
                     </Col>

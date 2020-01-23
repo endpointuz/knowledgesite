@@ -53,39 +53,70 @@
       line-height: 20px;
     }
     &-category {
+      flex: 0 0 20%;
       padding-right: 20px;
       border-right: 1px solid #DCD9E0;
-      a {
+      @media (max-width: 576px) {
+        flex: 0 0 auto;
+        padding-right: 5px;
+      }
+      span {
         color: #FFB15B;
         font-size: 16px;
         text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-          color: #FFB15B;
+        @media (max-width: 576px) {
+          font-size: 10px;
         }
       }
     }
     &-date {
+      flex: 0 0 auto;
       padding-right: 20px;
       padding-left: 20px;
       border-right: 1px solid #DCD9E0;
       color: #51556E;
       font-size: 16px;
+      @media (max-width: 576px) {
+        flex: 0 0 33%;
+        font-size: 10px;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
       .fa-clock {
         margin-right: 5px;
         color: #DCD9E0;
+        @media (max-width: 576px) {
+          display: none;
+        }
       }
     }
     &-share {
+      flex: 0 0 auto;
       padding-left: 20px;
+      @media (max-width: 576px) {
+        flex: 0 0 33%;
+        padding-left: 5px;
+      }
+      &-divider {
+        display: none;
+        @media (max-width: 576px) {
+          display: block;
+        }
+      }
       .fa-external-link-alt {
         margin-right: 5px;
         color: #DCD9E0;
+        @media (max-width: 576px) {
+          display: none;
+        }
       }
       a {
         color: #51556E;
         font-size: 16px;
         margin-right: 10px;
+        @media (max-width: 576px) {
+          font-size: 10px;
+        }
       }
     }
   }

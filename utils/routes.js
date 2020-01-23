@@ -4,10 +4,12 @@ import About from '../client/view/About';
 import Contacts from '../client/view/Contacts';
 import SingleCourse from '../client/view/SingleCourse';
 import Blog from '../client/view/Blog';
+import Article from '../client/view/Article';
 import NotFound from '../client/view/NotFound';
 
 import { courses } from '../client/content';
 import Stub from '../client/view/Stub';
+
 
 const singleCourseLinks = courses.map(course => course.link);
 
@@ -36,13 +38,18 @@ const routes = [
     exact: true,
   },
   {
-    component: Blog,
+    ...Blog,
     path: '/blog',
     exact: true,
   },
   {
     ...SingleCourse,
     path: '/courses/:name',
+    exact: true,
+  },
+  {
+    ...Article,
+    path: '/blog/:name',
     exact: true,
   },
   {

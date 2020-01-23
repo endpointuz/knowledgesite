@@ -1,0 +1,21 @@
+.article {
+  &-body {
+    padding: 60px 0;
+  }
+  &-paragraph {
+    color: #51556E;
+    font-size: 18px;
+    margin: 0;
+    padding-bottom: 15px;
+  }
+  &-title {
+    margin-bottom: 20px;
+  }
+  .figure_wrapper {
+    margin: 15px 0;
+    text-align: center;
+  }
+  .figure-caption {
+    text-align: center;
+  }
+}

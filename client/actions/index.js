@@ -41,6 +41,36 @@ export const getCourseDetail = slug => async (dispatch) => {
   }
 };
 
+export const getArticlesRequest = createAction('ARTICLES_GET_REQUEST');
+export const getArticlesSuccess = createAction('ARTICLES_GET_SUCCESS');
+export const getArticlesFailure = createAction('ARTICLES_GET_FAILURE');
+
+export const getArticles = query => async (dispatch) => {
+  dispatch(getArticlesRequest());
+  try {
+    const response = await axios.get(routes.articles(), { params: query });
+    dispatch(getArticlesSuccess({ data: response.data }));
+  } catch (e) {
+    dispatch(getArticlesFailure());
+    console.log(e);
+  }
+};
+
+export const getArticleRequest = createAction('ARTICLE_GET_REQUEST');
+export const getArticleSuccess = createAction('ARTICLE_GET_SUCCESS');
+export const getArticleFailure = createAction('ARTICLE_GET_FAILURE');
+
+export const getArticle = id => async (dispatch) => {
+  dispatch(getArticleRequest());
+  try {
+    const response = await axios.get(routes.article(id));
+    dispatch(getArticleSuccess({ data: response.data }));
+  } catch (e) {
+    dispatch(getArticleFailure({ data: e.response }));
+    console.log(e);
+  }
+};
+
 export const requestCallRequest = createAction('REQUEST_CALL_REQUEST');
 export const requestCallSuccess = createAction('REQUEST_CALL_SUCCESS');
 export const requestCallFailure = createAction('REQUEST_CALL_FAILURE');

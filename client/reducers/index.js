@@ -32,6 +32,38 @@ const coursesData = handleActions({
   results: [],
 });
 
+const articles = handleActions({
+  [actions.getArticlesRequest](state) {
+    return { ...state, state: 'request' };
+  },
+  [actions.getArticlesFailure](state) {
+    return { ...state, state: 'failure' };
+  },
+  [actions.getArticlesSuccess](state, { payload: { data } }) {
+    return { list: data.results, state: 'success', totalCount: data.count };
+  },
+}, {
+  list: [],
+  state: null,
+  totalCount: 0,
+});
+
+const articleData = handleActions({
+  [actions.getArticleRequest](state) {
+    return { ...state, state: 'request' };
+  },
+  [actions.getArticleFailure](state, { payload: { data } }) {
+    return { ...state, state: 'failure', statusCode: data.status };
+  },
+  [actions.getArticleSuccess](state, { payload: { data } }) {
+    return { ...state, content: data, state: 'success' };
+  },
+}, {
+  content: {},
+  statusCode: null,
+  state: null,
+});
+
 const courseDetail = handleActions({
   [actions.getCourseDetailSuccess](state, { payload: { data } }) {
     return {
@@ -89,6 +121,8 @@ export default combineReducers({
   windowData,
   coursesData,
   courseDetail,
+  articles,
+  articleData,
   requestCallData,
   snackbarVisible,
 });

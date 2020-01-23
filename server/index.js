@@ -15,6 +15,7 @@ import {
   faEnvelope,
   faExternalLinkAlt,
   faSpinner,
+  faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { faClock, faShareSquare } from '@fortawesome/free-regular-svg-icons';
 import '@babel/polyfill';
@@ -48,6 +49,7 @@ library.add(
   faExternalLinkAlt,
   faSpinner,
   faShareSquare,
+  faUser,
 );
 
 const sitemap = sm.createSitemap({
@@ -92,7 +94,6 @@ app.get('*', (req, res) => {
   Promise.all(promises).then(() => {
     const result = renderer(req, store);
     const { context } = result;
-    console.log('Context: ', context);
     if (context && context.status !== undefined) {
       console.log('Server response: ', res);
       res.status(context.status);

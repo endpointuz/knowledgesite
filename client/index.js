@@ -17,6 +17,7 @@ import {
   faEnvelope,
   faExternalLinkAlt,
   faSpinner,
+  faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { faClock, faShareSquare } from '@fortawesome/free-regular-svg-icons';
 import '@babel/polyfill';
@@ -53,6 +54,7 @@ library.add(
   faExternalLinkAlt,
   faSpinner,
   faShareSquare,
+  faUser,
 );
 
 const store = createStore(window.STORE_DATA, window);
