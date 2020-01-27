@@ -91,7 +91,7 @@ class Article extends React.Component {
           <FooterMain />
         </footer>
       </div>
-    ) : <NotFound />;
+    ) : <NotFound staticContext={this.props.staticContext} />;
   }
 }
 

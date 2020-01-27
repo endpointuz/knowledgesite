@@ -126,7 +126,7 @@ class SingleCourse extends React.Component {
           </footer>
         </div>
       )
-      : <NotFound />;
+      : <NotFound staticContext={this.props.staticContext} />;
   }
 }
 

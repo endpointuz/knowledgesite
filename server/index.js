@@ -67,6 +67,13 @@ const sitemap = sm.createSitemap({
     { url: '/courses/prodvinutoe-programmirovanie/', changefreq: 'monthly', priority: 0.8 },
     { url: '/courses/kak-nachat-kareru-programmista-s/', changefreq: 'monthly', priority: 0.8 },
     { url: '/courses/frontend-react-razrabotchik/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/blog/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/blog/kod/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/blog/uchitsya-uchitsya/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/blog/pochemu-stoit-vybrat-kursy-knowledge/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/blog/shema-uspeshnogo-razvitiya-front/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/blog/chto-takoe-web-prilozhenie-i-web-sayt/', changefreq: 'monthly', priority: 0.8 },
+    { url: '/blog/effekt-danninga-kryugera/', changefreq: 'monthly', priority: 0.8 },
   ],
 });
 

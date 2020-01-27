@@ -16,6 +16,7 @@ class NotFound extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.staticContext);
     this.timerHandle = setTimeout(() => {
       this.setState({ visible: true });
       document.querySelector('.loader').classList.add('loaded');
@@ -38,6 +39,10 @@ class NotFound extends React.Component {
   }
 
   render() {
+    console.log(this.props.staticContext);
+    if (this.props.staticContext) {
+      this.props.staticContext.status = 404;
+    }
     return (
       <div className={`wrapper ${this.state.visible ? '' : 'load'}`}>
         <Helmet>
