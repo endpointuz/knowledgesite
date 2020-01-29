@@ -79,7 +79,7 @@ class Blog extends React.Component {
           <meta property="og:site_name" content="Knowledge.uz" />
           <meta property="og:title" content="Блог | Knowledge.uz" />
           <meta property="og:description" content="Здесь публикуются авторские статьи, связанные с изучением программирования. Рассказываем, переводим, обучаем" />
-          <meta property="og:url" content="https://knowledge.uz" />
+          <meta property="og:url" content="https://knowledge.uz/blog" />
           <meta property="og:image" content={ogPic} />
           <meta property="og:locale" content="ru_RU" />
         </Helmet>
