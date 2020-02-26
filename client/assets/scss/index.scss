@@ -189,6 +189,13 @@ a.more {
   color: #fff;
 }
 
+.only-sm {
+  display: inline;
+  @media (min-width: 576px) {
+    display: none;
+  }
+}
+
 
 //STUB
 
