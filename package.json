@@ -70,7 +70,7 @@
     "file-saver": "^2.0.2",
     "history": "^4.7.2",
     "json-loader": "^0.5.7",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^0.6.0",
     "moment": "^2.24.0",
     "moment-locales-webpack-plugin": "^1.0.7",
